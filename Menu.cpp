@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "GameFunctions.h"
+#include "Menu.h"
 #include "Rooms.h"
 #include "Inventory.h"
 #include "PlayerInputFunctions.h"
@@ -131,21 +131,6 @@ void Menu(bool &gameOver)
 			system("CLS");
 		}
 	}
-}
-
-void DisplayRoomInfo()
-{
-
-}
-
-void CheckAdjacentRooms()
-{
-
-}
-
-void ProcessCommands()
-{
-
 }
 
 

@@ -2,16 +2,18 @@
 
 class Room
 {
+private:
 	const char STATE[32];
 	bool visited = false;
 	char roomName[128], longDecription[3200], shortDescription[1600];
 	
+public:
+	void GetRoomExits();
+	void GetRoomObjects();
+	void RemoveRoomObject();
 };
 
 void SetCurrentRoom();
-void GetRoomExits();
-void GetRoomObjects();
-void RemoveRoomObject();
 void PrintRoom();
 
 

@@ -6,23 +6,19 @@ void SetCurrentRoom()
 
 }
 
-void GetRoomExits()
-{
-
-}
-
-void GetRoomObjects()
-{
-
-}
-
-void RemoveRoomObject()
-{
-
-}
-
 void PrintRoom()
 {
 
 }
 
+void Room::GetRoomExits()
+{
+}
+
+void Room::GetRoomObjects()
+{
+}
+
+void Room::RemoveRoomObject()
+{
+}

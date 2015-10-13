@@ -1,21 +1,38 @@
 #include <iostream>
 #include <cstring>
 #include "Inventory.h"
+#include "PlayerInputFunctions.h"
+#include "Rooms.h"
 
 int itemCount = 0;
-char itemList[10][32];
+char playerItems[10][32];
+char itemList[10][32] = { "Pen", "Room237Key", "ElevatorKey", "ShedKey", "Coin", "Matchbook",
+						  "Meat", "Handle", "Crowbar", "Gas" };
+
 
 // Add an item to the itemList char array and increase the item cout
 void AddToInventory(char itemToAdd)
 {
-	itemList[itemCount][32] = itemToAdd;
+	playerItems[itemCount][32] = itemToAdd;
 	itemCount++;
 }
 
 // Remove an item to the itemList char array and decrease the item cout
 void RemoveFromInventory(char itemToRemove)
 {
-	itemList[itemCount][32] = NULL;
+	for (int i = 0; i < itemCount; ++i)
+	{
+		if (itemToRemove == playerItems[i][32])
+		{
+			while(i < itemCount -1)
+			{
+				playerItems[i][32] = playerItems[i + 1][32];
+				i++;
+			}
+			playerItems[i][32] = NULL;
+			break;
+		}
+	}
 	itemCount--;
 }
 
@@ -26,7 +43,7 @@ bool HasItemCheck(char itemToCheck)
 
 	for (int i = 0; i < itemCount; ++i)
 	{
-		if (itemList[itemCount][32] == itemToCheck)		returnCondition = true;
+		if (playerItems[itemCount][32] == itemToCheck)		returnCondition = true;
 	}
 	return returnCondition;
 }
@@ -49,7 +66,7 @@ void PrintInventory()
 
 	for (int i = 0; i < itemCount; ++i)
 	{
-		std::cout << itemList[itemCount][32] << std::endl;
+		std::cout << playerItems[itemCount][32] << std::endl;
 	}
 
 	system("pause");

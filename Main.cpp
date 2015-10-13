@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Rooms.h"
-#include "GameFunctions.h"
+#include "Menu.h"
 #define _WIN32_WINNT 0x0500
 #include <Windows.h>
 #include <mmsystem.h>
