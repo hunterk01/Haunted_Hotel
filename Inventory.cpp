@@ -6,7 +6,7 @@
 
 int itemCount = 0;
 char playerItems[10][32];
-char itemList[10][32] = { "Pen", "Room237Key", "ElevatorKey", "ShedKey", "Coin", "Matchbook",
+char itemList[9][32] = { "Pen", "Room237Key", "ElevatorKey", "Coin", "Matchbook",
 						  "Meat", "Handle", "Crowbar", "Gas" };
 
 

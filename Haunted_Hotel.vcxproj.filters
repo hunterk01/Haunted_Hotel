@@ -52,5 +52,11 @@
     <Text Include="RoomDescriptions.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="SearchDescriptions.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ExamineDescriptions.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
