@@ -33,7 +33,7 @@ void PrintRoom()
 	{
 		while (std::getline(file_, line_))
 		{
-			if (line_ == "<Lobby:ShortDesc>")
+			if (line_ == "<LongDesc:Test>")
 			{
 				while (std::getline(file_, line_))
 				{
