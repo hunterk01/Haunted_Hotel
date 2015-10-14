@@ -1,0 +1,33 @@
+  
+  Instructions:
+  Haunted Hotel is a text adventure game where you play a traveler who
+  has been trapped inside an abandonned hotel.  Using simple word commands
+  you must figure out how to escape before the spirit that haunts the hotel
+  takes your soul.
+
+  To make things worse, there's a curse upon this hotel that makes those
+  trapped inside weary.  If you don't escape by midnight, the curse will
+  overtake you and send you into a deep sleep.  Once that happens, the spirit
+  will have full access toyou and your soul will be lost forever.
+
+  As you travel through the hotel, you will find many items that might help.
+  you  These will be put into your inventory, which you can view anytime by
+  pressing the <F1> key.  All other actions will be controlled by using the
+  commands listed below.
+  
+  Commands:
+  North - This will move you through North facing exits
+  South - This will move you through South facing exits
+  East - This will move you through East facing exits
+  West - This will move you through Up facing exits
+  Up - This will move you through exits heading up
+  Down - This will move you through exits heading down
+  Take - This is used in combination with item names to pickup an item, such
+         as 'Take Meathook'.
+  Use - This will be used in combination with item names to use an item, such
+        as 'Use Meathook'.  It can also be used to interact with evironmental
+        objects that can't be picked up.
+  Press - This is used in combination with objects that need to be pressed
+  Examine - Use this to examine an item in your inventory
+  Inventory - Open a list of the items in your inventory
+  Help - See a list of available commands

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include "Inventory.h"
-#include "PlayerInputFunctions.h"
-#include "Rooms.h"
+
+
 
 int itemCount = 0;
 char playerItems[10][32];

@@ -1,0 +1,341 @@
+<INTRO>
+<LongDesc>
+You're driving over a mountain pass, on your way to visit family.  Trees fly by on either 
+side as you speed down the road. The smell of pine blows in through your open window.  
+'What a beautiful spring day for a drive', you think to yourself. Suddenly, a dark shadow 
+passes over the car, as if a storm was rolling in. You look out the window, but there 
+isn't a cloud in the sky. A feeling on unease overcomes you at the strangeness of the 
+occurrence. You drive on into the growing gloom.
+
+After traveling another mile down the road, your car engine starts to sputter.  You look 
+at the gas gauge and see the needle pointing at empty.  You find that alarming, since you 
+just filled up before heading up the pass.  It shouldn't be anywhere near empty.  As you 
+round a turn, you see a hotel up ahead. Your engine sputters to a halt as your car rolls 
+up to the front of the hotel. You decide to go inside and try to get some help.
+<End>
+
+<FDOOR>
+<LongDesc>
+Location: Hotel Front Door
+
+You are standing in front of a weather beaten hotel.  Large double doors stand before 
+you, the wood cracked from years of neglect. The sign above the door says, Welcome to the 
+Chesterfield Hotel.
+
+Entrance: North
+<End>
+
+<LOBBY>
+<LongDesc>
+Location: Lobby
+
+You enter the dusty hotel lobby.  Dim light from the windows cast shadows across the 
+empty room.  The doors slam shut behind you and you hear the lock latch.  You try to open 
+the door, but it won't budge.  The hotel's front desk is to the north. There are doorways 
+to both the East and West.
+
+Exits: North, East, West
+<End>
+
+<ShortDesc>
+Location: Lobby
+
+You are in the hotel lobby.  The eyes of the people in the paintings on the walls seem to 
+follow you as you walk across the room. The front desk is to the north.  There are 
+doorways to both the East and West.
+
+Exits: North, East, West
+<End>
+
+<FDESK>
+<LongDesc>
+Location: Front Desk
+
+You stand before an ornate front desk made of cherry wood, but there's no one in sight to 
+help you.  Rows of room keys hang from small hooks on the wall behind it. A dusty, old 
+guest book lies on the desk.  A bell sits next to it. The lobby is to the south and an 
+elevator is to the West.
+
+Exits: South, West
+<End>
+
+<ShortDesc>
+Location: Front Desk
+
+You stand at the hotel's front desk.  Rows of room keys hang from small hooks on the wall 
+behind it.  One of them are missing. The guest book lies open on the desktop.  Your name 
+is signed on the bottom line.  The lobby is to the south and an elevator is to the West.
+
+Exits: South, West
+<End>
+
+<GUESTBOOK>
+<LongDesc>
+Location: Front Desk
+
+The sound of the bell echoes through the room.  You hear the strain of creaking leather 
+as the old guest book starts to open by itself. A pen rolls across the desk, coming to a 
+stop next to the book. You scan the list of names on the page, ending in a blank line 
+awaiting a signature. The lobby is to the South and an elevator is to the West.
+
+Exits: South, West
+<End>
+
+<ShortDesc>
+Location: Front Desk
+
+As you sign your name in the book and set the pen down, you hear the jangling of keys.  
+You look up to see a room key rise up off its hook and float toward you.  You hold out 
+your hand and it comes to rest in your palm.  It says Room 237 on the tag.  The lobby is 
+to the south and an elevator is to the West.
+
+Exits: South, West
+<End>
+
+<ELEV1X>
+<LongDesc>
+Location: Elevator 1F
+
+You're standing at the elevator door.  Looking at the dial above the door, you see that 
+there are three floors and a basement in this hotel.  As abandoned and rundown as this 
+place looks.  You're not sure if it will even work.  Only one way to find out.
+
+Exits: East
+<End>
+
+<ShortDesc>
+Location: Elevator 1F
+
+You standing in front of the 1st floor lobby elevator.  There's a button on the wall next 
+to it.  The front desk is to the East.
+
+Exits: East
+<End>
+
+<ELEVSTART>
+<LongDesc>
+Location: Elevator
+
+The elevator whirs to life and you hear the screech of long neglected wheels turning. 
+You hear the elevator car moving toward your floor.  With a ding, the elevator door opens 
+and you step inside.
+<End>
+
+<ShortDesc>
+Location: Elevator
+With a ding, the elevator door opens and you step inside.
+<End>
+
+<ELEV2X>
+<LongDesc>
+Location: Elevator 2F
+
+You are in the second floor hallway.  The elevator is before you with a button on the 
+wall next to it.  The hallway runs to the West and East, with guest room doors all along 
+the way.
+
+Exits: East, West
+<End>
+
+<ELEV3X>
+<LongDesc>
+Location: Elevator 3F
+
+You are in the third floor hallway.  Doors line the hallway to the East and West.  
+The elevator stands before you with a button on the wall next to it.
+
+Exits: East, West
+<End>
+
+<ELEVBX>
+<LongDesc>
+Location: Elevator Basement
+You are in the basement hallway.  The elevator stands before you with a button on the 
+wall next to it.  A dimly lit corridor runs to the South.
+
+Exits: East
+<End>
+
+<ELEVINT>
+<LongDesc>
+Location: Elevator Interior
+
+You are standing in the hotel's elevator.  It looks to have been fancy at one time, but 
+time has not been kind to it.  The fabric on the walls is now torn and faded, and the 
+once shiny metal, now left dull and scratched.  There are four buttons on the control 
+panel.  Numbers 1, 2, and 3 for the top floors and B for the basement.  The basement 
+button also has a slot next to it for a key.
+
+Press 1 for the first floor, 2 for the second, 3 for the third, and B for the basement.
+<End>
+
+<ShortDesc>
+Location: Elevator Interior
+
+You are standing in the hotel's elevator.  There are four buttons on the control panel.  
+Numbers 1, 2, and 3 for the top floors and B for the basement.  The basement button also 
+as a slot next to it for a key.
+
+Press 1 for the first floor, 2 for the second, 3 for the third, and B for the basement.
+<End>
+
+<DINING>
+<LongDesc>
+Location: Dining Room
+
+This dining room must have been beautiful at one time, but now it's a mess of dusty 
+tables and overturned chairs.  The wreck of a huge crystal chandelier lies shattered on 
+the floor in the center of the room.  There are doors leading to the North and East.
+
+Exits: North, East
+<End>
+
+<ShortDesc>
+Location: Dining Room
+
+You are in the remains of the dining room.  There are doors to the North and East.
+
+Exits: North, East
+<End>
+
+<KITCHEN>
+<LongDesc>
+Location: Kitchen
+
+You're in the kitchen.  The smell of rotten food is overwhelming!  The sink is filled 
+with dirty water.  Pots, pans and kitchen utensils are haphazardly spread across the 
+floor.  Rows of cabinets line the walls.  The only exit is to the South.
+
+Exits: South
+<End>
+Location: Kitchen
+
+The kitchen is foul smelling and messy.  It obviously hasn't been used in years.  There's 
+nothing of use here any longer.  The exit is to the South.
+
+Exits: South
+<ShortDesc>
+
+<End>
+
+<BALLROOM>
+<LongDesc>
+Location: Ballroom
+
+You're in a grand ballroom.  These hardwood floors have undoubtedly seen many guests 
+dancing late into the evening.  An old record player sits in the corner of the room. 
+There are doors to the North and West.
+
+Exits: North, West
+<End>
+
+<ShortDesc>
+Location: Ballroom
+
+You're in the grand ballroom.  All is quiet in here... for now. 
+There are doors to the North and West.
+
+Exits: North, West
+<End>
+
+<RECORD>
+<LongDesc>
+You start the record player and the sound of a waltz echoes through the ballroom.  You 
+turn around and see that numerous ghostly couples are dancing circles around the room.  
+Your amazement turns to horror as you realize that all of the couples are hanging limp, 
+being moved about by ghostly strings, like marionettes.  You notice another ghost, 
+dressed in maintenance worker clothes, standing on the far side of the room.  He is 
+smiling, apparently amused by the spectacle.  As the song comes to an end, all of the 
+spirits fade away, leaving you alone in the ballroom.  You feel a chill down your spine 
+as you think about the scene you just witnessed.
+<End>
+
+<GARDENENT>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<GARDPATH>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<FOUNTAIN>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<SHED>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<SHEDINT>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<RITUALDIM>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<RITUALLIT>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<BURIAL>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<HALL2FW>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>
+
+<HALL2FE>
+<LongDesc>
+
+<End>
+
+<ShortDesc>
+
+<End>

@@ -1,53 +1,33 @@
 #pragma once
 
+
+
 class Room
 {
-private:
-	const char STATE[32];
-	bool visited = false;
-	char roomName[128], longDecription[3200], shortDescription[1600];
-	
 public:
+	char STATE[32], roomName[64], longDecription[3200], shortDescription[1600];
+	bool visited;
+	
 	void GetRoomExits();
-	void GetRoomObjects();
+	char CheckRoomObject();
 	void RemoveRoomObject();
 };
 
-void SetCurrentRoom();
+void SetCurrentRoom(int inState);
 void PrintRoom();
 
-
 /*
-Room Introduction;
-Room Instructions;
-Room FrontDoor;
-Room Lobby;
-Room FrontDesk;
-Room ElevExtBsmt;
-Room ElevExt1F;
-Room ElevExt2F;
-Room ElevExt3F;
-Room ElevInterior;
-Room DiningRoom;
-Room Kitchen;
-Room Ballroom;
-Room GardenEntrance;
-Room GardenPath;
-Room Fountain;
-Room MaintenanceShed;
-Room RitualRoomDark;
-Room RitualRoomLight;
-Room BurialChamber;
-Room Hallway2fWest;
-Room Hallway2fEast;
-Room Room237;
-Room MaidCart;
-Room Room304;
-Room SodaMachine;
-Room BoilerRoom;
-Room ParkingLot;
-Room AbandonnedTruck;
-Room YourCar;
-Room WinScreen;
-Room LoseScreen;
+Room FrontDoor = {
+	"Front Door", 
+	"Long Description", 
+	"Short Description", 
+	false
+};
+
+Room Lobby = {
+	"Lobby",
+	"You're in the lobby, plus some other text",
+	"It's the lobby",
+	false
+};
 */
