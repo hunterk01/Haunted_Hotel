@@ -2,7 +2,10 @@
 #include <cstring>
 #include <string>
 #include <fstream>
+#include <Windows.h>
+#include <mmsystem.h>
 #include "Menu.h"
+#include "GameLoop.h"
 
 void TitleScreen()
 {
@@ -36,6 +39,10 @@ void Menu(bool &gameOver)
 {
 	char menuChoice[32] = "0";
 	bool exitMenu = false;
+
+	PlaySound(TEXT("HouseOnTheHill.wav"), NULL, SND_LOOP | SND_ASYNC);
+	TitleScreen();
+	system("pause");
 
 	while (!exitMenu)
 	{
@@ -72,8 +79,11 @@ void Menu(bool &gameOver)
 			}
 			else if (menuChoice[0] == '2')
 			{
-				exitMenu = true;
 				system("CLS");
+				PlaySound(NULL, 0, SND_ASYNC);
+				PlaySound(TEXT("HarbingerOfDoom.wav"), NULL, SND_LOOP | SND_ASYNC);
+				GameProcessor();
+				PlaySound(NULL, 0, SND_ASYNC);
 			}
 			else if (menuChoice[0] == '3')
 			{

@@ -1,33 +1,13 @@
 #pragma once
 
-
-
 class Room
 {
 public:
-	char STATE[32], roomName[64], longDecription[3200], shortDescription[1600];
+	char STATE[16];
+	char item[32];
+	char usable[32];
+	char searchable[32];
+	char pressable[32];
+	char adjacentRooms[6][16];
 	bool visited;
-	
-	void GetRoomExits();
-	char CheckRoomObject();
-	void RemoveRoomObject();
 };
-
-void SetCurrentRoom(int inState);
-void PrintRoom();
-
-/*
-Room FrontDoor = {
-	"Front Door", 
-	"Long Description", 
-	"Short Description", 
-	false
-};
-
-Room Lobby = {
-	"Lobby",
-	"You're in the lobby, plus some other text",
-	"It's the lobby",
-	false
-};
-*/

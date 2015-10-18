@@ -1,302 +1,332 @@
-<INTRO>
-<LongDesc>
+INTRO
+<FirstDesc>
+Introduction
+
 You're driving over a mountain pass, on your way to visit family.  Trees fly by
 on either side as you speed down the road. The smell of pine blows in through
 your open window.  'What a beautiful spring day for a drive', you think to 
-yourself. Suddenly, a dark shadow passes over the car, as if a storm was rolling
-in. You look out the window, but there isn't a cloud in the sky. A feeling on
-unease overcomes you at the strangeness of the occurrence. You drive on into the
-growing gloom.
+yourself. Suddenly, a dark shadow passes over the car, as if a storm was 
+rolling in. You look out the window, but there isn't a cloud in the sky. A 
+feeling on unease overcomes you at the strangeness of the occurrence. You drive
+on into the growing gloom.
 
 After traveling another mile down the road, your car engine starts to sputter.
 You look at the gas gauge and see the needle pointing at empty.  You find that
 alarming, since you just filled up before heading up the pass.  It shouldn't be
-anywhere near empty.  As you round a turn, you see a hotel up ahead. Your engine
-sputters to a halt as your car rolls up to the front of the hotel. You decide to
-go inside and try to get some help.
+anywhere near empty.  As you round a turn, you see a hotel up ahead. Your 
+engine sputters to a halt as your car rolls up to the front of the hotel. You 
+decide to go inside and try to get some help.
 <End>
 
-<FDOOR>
-<LongDesc>
+FDOOR
+<FirstDesc>
 Location: Hotel Front Door
 
 You are standing in front of a weather beaten hotel.  Large double doors stand
 before you, the wood cracked from years of neglect. The sign above the door 
 says, Welcome to the Chesterfield Hotel.
 
-Entrance: North
+Entrance: 1 - North
 <End>
 
-<LOBBY>
-<LongDesc:Test>
+LOBBY
+<FirstDesc>
 Location: Lobby
 
-You enter the dusty hotel lobby.  Dim light from the windows cast shadows across
-the empty room.  The doors slam shut behind you and you hear the lock latch.  You
-try to open the door, but it won't budge.  The hotel's front desk is to the north.
-There are doorways to both the East and West.
+You enter the dusty hotel lobby.  Dim light from the windows cast shadows 
+across the empty room.  The doors slam shut behind you and you hear the lock 
+latch.  You try to open the door, but it won't budge.  The hotel's front desk 
+is to the north.  There are doorways to both the East and West.
 
-Exits: North, East, West
+Exits: 1 - North, 3 - East, 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Lobby
 
-You are in the hotel lobby.  The eyes of the people in the paintings on the walls
-seem to follow you as you walk across the room. The front desk is to the north.
-There are doorways to both the East and West.
+You are in the hotel lobby.  The eyes of the people in the paintings on the 
+walls seem to follow you as you walk across the room. The front desk is to the 
+north.  There are doorways to both the East and West.
 
-Exits: North, East, West
+Exits: 1 - North, 3 - East, 4 - West
 <End>
 
-<FDESK>
-<LongDesc>
+FDESK
+<FirstDesc>
 Location: Front Desk
 
-You stand before an ornate front desk made of cherry wood, but there's no one in
-sight to help you.  Rows of room keys hang from small hooks on the wall behind it.
-A dusty, old guest book lies on the desk.  A bell sits next to it. The lobby is 
-to the south and an elevator is to the West.
+You stand before an ornate front desk made of cherry wood, but there's no one 
+in sight to help you.  Rows of room keys hang from small hooks on the wall 
+behind it.  A dusty, old guest book lies on the desk.  A bell sits next to it.
+The lobby is to the south and an elevator is to the West.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Front Desk
 
-You stand at the hotel's front desk.  Rows of room keys hang from small hooks on
-the wall behind it.  One of them are missing. The guest book lies open on the
-desktop.  Your name is signed on the bottom line.  The lobby is to the south and
-an elevator is to the West.
+You stand at the hotel's front desk.  Rows of room keys hang from small hooks 
+on the wall behind it.  One of them are missing. The guest book lies open on 
+the desktop.  Your name is signed on the bottom line.  The lobby is to the 
+south and an elevator is to the West.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<GUESTBOOK>
-<LongDesc>
+GUESTBOOK
+<FirstDesc>
 Location: Front Desk
 
 The sound of the bell echoes through the room.  You hear the strain of creaking
 leather as the old guest book starts to open by itself. A pen rolls across the
-desk, coming to a stop next to the book. You scan the list of names on the page,
-ending in a blank line awaiting a signature. The lobby is to the South and an
-elevator is to the West.
+desk, coming to a stop next to the book. You scan the list of names on the page
+which ending with a blank line awaiting a signature. The lobby is to the South
+and an elevator is to the West.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Front Desk
 
-As you sign your name in the book and set the pen down, you hear the jangling of
-keys.  You look up to see a room key rise up off its hook and float toward you.
-You hold out your hand and it comes to rest in your palm.  It says Room 237 on
-the tag.  The lobby is to the south and an elevator is to the West.
+The guest book lies open on the front desk, with a pen sitting next to it.  A
+blank line at the bottom of the page awaits a new signature.  The lobby is to 
+the south and an elevator is to the West.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<ELEV1X>
-<LongDesc>
+<ThirdDesc>
+Location: Front Desk
+
+The guest book lies open on the front desk.  A blank line at the bottom of 
+the page awaits a new signature.  The lobby is to the south and an elevator 
+is to the West.
+
+Exits: 2 - South, 4 - West
+<End>
+
+SIGNBOOK
+<FirstDesc>
+Location: Front Desk
+
+As you sign your name in the book and set the pen down, you hear the jangling 
+of keys.  You look up to see a room key rise up off its hook and float toward 
+you.  You hold out your hand and it comes to rest in your palm.  It says Room
+237 on the tag.  The lobby is to the south and an elevator is to the West.
+
+Exits: 2 - South, 4 - West
+<End>
+
+ELEV1X
+<FirstDesc>
 Location: Elevator 1F
 
-You're standing at the elevator door.  Looking at the dial above the door, you
-see that there are three floors and a basement in this hotel.  As abandoned and
-rundown as this place looks.  You're not sure if it will even work.  Only one
-way to find out.
+You're standing in front of the elevator.  Looking at the dial above the door, 
+you see that there are three floors and a basement in this hotel.  As abandoned
+and rundown as this place looks.  You're not sure if it will even work.  Only
+one way to find out.
 
-Exits: East
+Exits: 3 - East
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Elevator 1F
 
 You standing in front of the 1st floor lobby elevator.  There's a button on the
 wall next to it.  The front desk is to the East.
 
-Exits: East
+Exits: 3 - East
 <End>
 
-<ELEVSTART>
-<LongDesc>
-Location: Elevator
+ELEVSTART
+<FirstDesc>
+Location: Elevator 1F
 
 The elevator whirs to life and you hear the screech of long neglected wheels
 turning. You hear the elevator car moving toward your floor.  With a ding, the
 elevator door opens and you step inside.
 <End>
 
-<ShortDesc>
-Location: Elevator
+<SecondDesc>
+Location: Elevator 1F
 With a ding, the elevator door opens and you step inside.
 <End>
 
 <ELEV2X>
-<LongDesc>
+<FirstDesc>
 Location: Elevator 2F
 
 You are in the second floor hallway.  The elevator is before you with a button
 on the wall next to it.  The hallway runs to the West and East, with guest room
 doors all along the way.
 
-Exits: East, West
+Exits: 3 - East, 4 - West
 <End>
 
-<ELEV3X>
-<LongDesc>
+ELEV3X
+<FirstDesc>
 Location: Elevator 3F
 
-You are in the third floor hallway.  Doors line the hallway to the East and West.  
-The elevator stands before you with a button on the wall next to it.
+You are in the third floor hallway.  Doors line the hallway to the East and 
+West.  The elevator stands before you with a button on the wall next to it.
 
-Exits: East, West
+Exits: 3 - East, 4 - West
 <End>
 
-<ELEVBX>
-<State:LongDesc>
+ELEVBX
+<State:FirstDesc>
 Location: Elevator Basement
 
 You are in the basement hallway.  The elevator stands before you with a button
 on the wall next to it.  A dimly lit corridor runs to the South.
 
-Exits: East
+Exits: 3 - East
 <End>
 
-<ELEVINT>
-<LongDesc>
+ELEVINT
+<FirstDesc>
 Location: Elevator Interior
 
 You are standing in the hotel's elevator.  It looks to have been fancy at one
-time, but time has not been kind to it.  The fabric on the walls is now torn and
-faded, and the once shiny metal, now left dull and scratched.  There are four
-buttons on the control panel.  Numbers 1, 2, and 3 for the top floors and B for
-the basement.  The basement button also has a slot next to it for a key.
+time, but time has not been kind to it.  The fabric on the walls is now torn 
+and faded, and the once shiny metal, now left dull and scratched.  There are 
+four buttons on the control panel.  Numbers 1, 2, and 3 for the top floors and
+B for the basement.  The basement button also has a slot next to it for a key.
 
 Press 1 for first floor, 2 for  second, 3 for  third, and B for basement.
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Elevator Interior
 
-You are standing in the hotel's elevator.  There are four buttons on the control
-panel.  Numbers 1, 2, and 3 for the top floors and B for the basement.  The 
+You are standing in the hotel's elevator.  There are four buttons on the 
+control panel.  Numbers 1, 2, and 3 for the top floors and B for the basement.  The 
 basement button also as a slot next to it for a key.
 
 Press 1 for first floor, 2 for  second, 3 for  third, and B for basement.
 <End>
 
-<DINING>
-<LongDesc>
+DINING
+<FirstDesc>
 Location: Dining Room
 
 This dining room must have been beautiful at one time, but now it's a mess of
-dusty tables and overturned chairs.  The wreck of a huge crystal chandelier lies
-shattered on the floor in the center of the room.  There are doors leading to
-the North and East.
+dusty tables and overturned chairs.  The wreck of a huge crystal chandelier 
+lies shattered on the floor in the center of the room.  There are doors leading
+to the North and East.
 
-Exits: North, East
+Exits: 1 - North, 3 - East
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Dining Room
 
 You are in the remains of the dining room.  There are doors to the North and
 East.
 
-Exits: North, East
+Exits: 1 - North, 3 - East
 <End>
 
-<KITCHEN>
-<LongDesc>
+KITCHEN
+<FirstDesc>
 Location: Kitchen
 
 You're in the kitchen.  The smell of rotten food is overwhelming!  The sink is
-filled with dirty water.  Pots, pans and kitchen utensils are haphazardly spread
-across the floor.  Rows of cabinets line the walls.  The only exit is to the
-South.
+filled with dirty water.  Pots, pans and kitchen utensils are haphazardly 
+spread across the floor.  Rows of cabinets line the walls.  The only exit is to
+the South.
 
-Exits: South
+Exits: 2 - South
 <End>
+
+<SecondDesc>
 Location: Kitchen
 
-The kitchen is foul smelling and messy.  It obviously hasn't been used in years.  There's 
-nothing of use here any longer.  The exit is to the South.
+The kitchen is foul smelling and messy.  It obviously hasn't been used in 
+years.  There's nothing of use here any longer.  The exit is to the South.
 
-Exits: South
-<ShortDesc>
-
+Exits: 2 - South
 <End>
 
-<BALLROOM>
-<LongDesc>
+BALLROOM
+<FirstDesc>
 Location: Ballroom
 
 You're in a grand ballroom.  These hardwood floors have undoubtedly seen many
 guests dancing late into the evening.  An old record player sits in the corner
-of the room. There are doors to the North and West.
+of the room. There's a door on the North that leads out to the garden behind
+the hotel.  You try the handle, but it's locked.  The door to the West leads
+back to the Lobby.
 
-Exits: North, West
+Exits: 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Ballroom
 
 You're in the grand ballroom.  All is quiet in here... for now. 
 There are doors to the North and West.
 
-Exits: North, West
+Exits: 1 - North, 4 - West
 <End>
 
-<RECORD>
-<LongDesc>
-You start the record player and the sound of a waltz echoes through the ballroom.
-You turn around and see that numerous ghostly couples are dancing circles around
-the room.  Your amazement turns to horror as you realize that all of the couples
-are hanging limp, being moved about by ghostly strings, like marionettes.  You
-notice another ghost, dressed in maintenance worker clothes, standing on the far
-side of the room.  He is smiling, apparently amused by the spectacle.  As the
-song comes to an end, all of the spirits fade away, leaving you alone in the
-ballroom.  You feel a chill down your spine as you think about the scene you
-just witnessed.
+RECORD
+<FirstDesc>
+You start the record player and the sound of a waltz echoes through the 
+ballroom.  You turn around and see that numerous ghostly couples are dancing 
+circles around the room.  Your amazement turns to horror as you realize that 
+all of the couples are hanging limp, being moved about by ghostly strings, like
+marionettes.  You notice another ghost, dressed in maintenance worker clothes,
+standing on the far side of the room.  He is smiling, apparently amused by the
+spectacle.
+
+As the song comes to an end, the spirits stop dancing and move toward the North
+door as if to adjourn outside to cool off.  They all pass through the door, out
+of sight.  As the last of the dancers passes through, you hear a clicking sound
+as the lock on the door unlatches.
+
+You notice that the ghost of the maintenance worker has not left with the 
+others.  His earlier look of pleasure has changed to one of anger as he glares
+at the now unlocked door.  He lets out a scream of rage and fades out of sight.
+You feel a chill run down your spine as you think about the scene you just 
+witnessed.
 <End>
 
-<HALL2W>
-<LongDesc>
+HALL2W
+<FirstDesc>
 Location: Hallway 2F West
 
 You're in the West wing of the second floor hallway.  There's a housekeeping 
 supply cart here.  The hallway leads back to the East.
 
-Exits: East
+Exits: 3 - East
 <End>
 
-<ShortDesc>
-
-<End>
-
-<HALL2E>
-<LongDesc>
+HALL2E
+<FirstDesc>
 Location: Hallway 2F East
 
 You're in the East wing of the second floor hallway.  Room number 237 stands
 before you on the North wall.  The door is locked.  The hallway leads back to
 the West.
 
-Exits: West
+Exits: 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Hallway 2F East
 
 You're in the East wing of the second floor hallway.  Room number 237 stands
 before you on the North wall.  The door is open.  The hallway leads back to
 the West.
 
-Exits: North, West
+Exits: 1 - North, 4 - West
 <End>
 
-<ROOM237>
-<LongDesc>
+ROOM237
+<FirstDesc>
 Location: Room 237
 
 You unlock the door and enter the room.  You find it surprisingly clean and it
@@ -313,101 +343,93 @@ stay here.'
 The drowsiness fades and you get the feeling that you should leave this room
 fast.
 
-Exits: South
+Exits: 2 - South
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Room 237
 
 You are back in room 237, but the female voice is no longer present.  You feel
 a sense of dread as you look at the bed.  You had best not stay here long.
 
-Exits: North
+Exits: 1 - North
 <End>
 
-<CART>
-<LongDesc>
-Location: Hallway 2F West
-
-You search the housekeeping cart and find a book of matches.
-<End>
-
-<ShortDesc>
-Location: Hallway 2F West
-
-You have already searched this cart.  There is nothing left to find here.
-<End>
-
-<HALL3W>
-<LongDesc>
+HALL3W
+<FirstDesc>
 Location: Hallway 3F West
 
 You're in the West wing of the third floor hallway.  One of the room doors on
 the North wall is open.  The room number on the door reads 304.  The hallway
 runs to the East.
 
-Exits: North, East
+Exits: 1 - North, East
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Hallway 3F East
 
 You're in the West wing of the third floor hallway.  The door to room 304 is
 closed.  You don't want to go back in there anyway. The hallway runs to the
-East.
+West.
 
-Exits: East
+Exits: 4 - West
 <End>
 
-<HALL3E>
-<LongDesc>
+HALL3E
+<FirstDesc>
 Location: Hallway 3F East
 
 You're in the East wing of the third floor hallway.  There is a soda machine
 against the wall here.  A hand written sign on it says, OUT OF ORDER.
 
-Exits: West
+Exits: 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Hallway 3F East
 
 You're in the East wing of the third floor hallway.  The soda machine, where
 you got the coin, is against the wall here.  It's not working.
 
-Exits: West
+Exits: 4 - West
 <End>
 
-<ROOM305>
-<LongDesc>
+ROOM305
+<FirstDesc>
 Location: Room 305
 
 This room appears to be setup more like an apartment, than a hotel room.  The
 window overlooks the garden behind the hotel.  Maintenance uniforms hang in the
 closet.  A stack of books on the occult sit on the nightstand next to the bed.
-The door to the hallway is to the South.
+A small metal crank handle sits on top of the books.  The door to the hallway
+is to the South.
 
-Exits: South
+Exits: 2 - South
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Room 305
 
 You are back in the maintenance workers room.  A stack of books on the occult
-sit on the nightstand next to the bed.  The door to the hallway is to the South.
+sit on the nightstand next to the bed.  A small metal crank handle sits on top
+of the books.The door to the hallway is to the South.
 
-Exits: South
+Exits: 2 - South
 <End>
 
-<BOOKS>
-<LongDesc>
+BOOKS
+<FirstDesc>
 Location: Room 305
 
-These books seem to be about different occult rituals that can be performed.
-You pick up one of the books and read a chapter on performing human sacrifice
-to obtain life after death.  As you flip to the next chapter, the book is torn
-from your hands and slammed back down on the stack of books.  Startled, you
-look around, but no one is there.
+As you pick up the crank handle, the balance of the books shift and the fall
+onto the floor.  One of the books flips open showing a picture of a pedastal
+surrounded by strange markings on the floor.  You pick up the book and see
+that this image is about a ritual performed to acheive life after death.
+
+Before you can read any further, the book is ripped from your hands.  Startled,
+you look around, but no one is there.  The book floats in the air before a
+moment longer, then slams back down on the nighstand.
 
 'Leave my things alone!' a disembodied voice shouts.  
 
@@ -416,29 +438,28 @@ In a panic, you stumble out of the room and back into the hallway.
 '...and stay out!' the voice shouts as the door slams shut.
 <End>
 
-<BASEMENT>
-<LongDesc>
+BASEMENT
+<FirstDesc>
 Location: Basement
 
 Light from the small, dirty windows barely illuminates the basement.  The
 furnace, long gone cold, fills half of the room.  There's a door on the East
-wall, but it is chained shut.  You will need to find something to break the
-chain with.  A hallway runs to the North.
+wall, but it is chained shut.  A hallway runs to the North.
 
-Exits: North
+Exits: 1 - North
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Basement
 
 You are in the hotel basement.  A hallway runs to the North and door to the
 East leads out to the parking lot.
 
-Exits: North, East
+Exits: 1 - North, 3 - East
 <End>
 
 <CHAIN>
-<LongDesc>
+<FirstDesc>
 Location: Basement
 
 You slide the crowbar through the chain and pull with all of your might.  After
@@ -446,109 +467,93 @@ several tries, the chain snaps and falls from the door.  Sunlight spills into
 the darkness as the door swings open.
 <End>
 
-<GARDENENT>
-<LongDesc>
+GARDENENT
+<FirstDesc>
 Location: Garden Entrance
 
 You have entered the hotel garden.  Years of neglect have allowed the plants to
 overgrow it.  The narrow path runs to the West through the tangled branches and
 vines.  The door to the Ballroom is to the South.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Garden Entrance
 You are on at the garden entrance.  The path runs to the West.  A door into the
 ballroom is to the South.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<GARDPATH>
-<LongDesc>
+GARDENPATH
+<FirstDesc>
 Location: Garden Path
 
 You are on the garden path.  It runs to the North and East.
 
-Exits: North, East
+Exits: 1 - North, 3 - East
 <End>
 
-<FOUNTAIN>
-<LongDesc>
+FOUNTAIN
+<FirstDesc>
 Location: Fountain
 
 You stand before an large fountain.  The water is dark and murky.  An ornate
 fish sculpture sits atop the fountain, its mouth gaping open.  Could this be
 the fish that the voice spoke of?  The path leads to the West and South.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Fountain
 
 The fountain is drained of water and stairs lead down into a secret chamber.   
 The path leads to the West and South.
 
-Exits: South, West
+Exits: 2 - South, 4 - West
 <End>
 
-<SHED>
-<LongDesc>
+SHED
+<FirstDesc>
 Location: Maintenance Shed
 
 You've arrive at a maintenance shed.  A large dog guards the entrance.  He
 snarls at you as you approach.  The path leads back to the East.
 
-Exits: East
+Exits: 3 - East
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Maintenance Shed
 
 You are at the maintenance shed.  The dog that was guarding it is gone.  The
 shed door is to to North.  The path leads back to the East.
 
-Exits: North, East
+Exits: 1 - North, 3 - East
 <End>
 
-<SHEDINT>
-<LongDesc>
+SHEDINT
+<FirstDesc>
 Location: Shed Interior
 
-The shed is a mess of old tools, dust and cobwebs.  Piles of rusted, and broken,
-tools and gardening equipment lie in piles all around you.
+The shed is a mess of old tools, dust and cobwebs.  Piles of rusted, and 
+broken, tools and gardening equipment lie in piles all around you.
 
-Exits: South
+Exits: 2 - South
 <End>
 
-<ShortDesc>
-Location: Shed Interior
-
-You have already searched the shed.  There's nothing left to find here.
-
-Exits: South
-<End>
-
-<SHEDSEARCH>
-<LongDesc>
-Location: Shed Interior
-
-After digging through numerous rusted, and broken, tools and gardening
-equipment, you find a crowbar that looks to still be in good shape.
-<End>
-
-<FEEDDOG>
-<LongDesc>
+FEEDDOG
+<FirstDesc>
 Location: Maintenance Shed
 
 As you take the meat from its plastic container, the dog eyes it with hunger.
 You toss the meat deep into the garden and the dog runs after it.
 <END>
 
-<SECRET>
-<LongDesc>
+SECRET
+<FirstDesc>
 Location: Fountain
 
 The coin lands in the fish’s mouth and rattles around, down into its belly.
@@ -558,11 +563,11 @@ bottom.  You hear a grinding sound of stone on stone as the fountain bottom
 starts to move.  The stone bottom parts to reveal a narrow stairway leading
 down into the darkness.  The garden path leads East and South.
 
-Exits: South, East, Down
+Exits: 2 - South, 3 - East, Down
 <End>
 
-<RITUALDIM>
-<LongDesc>
+RITUALDIM
+<FirstDesc>
 Location: Dim Room
 
 The room is barely lit from the light making it down the stairs.  You can just
@@ -572,8 +577,8 @@ sitting on top.  The stairs up lead back out into the garden.
 Exit: Up
 <End>
 
-<RITUALLIT>
-<LongDesc>
+RITUALLIT
+<FirstDesc>
 Location: Ritual Room
 
 As the candle lights up the room, you discover that the pedestal is surrounded
@@ -581,26 +586,28 @@ by a large pentagram, drawn in chalk on the floor.  A small bowl sits on the
 pedestal below the candle, it appears to be covered in dried blood. You look
 up and see the ghost of a young woman standing before you.
 
-'You made it' she says with a smile. 'I was worried that you wouldn't find me.'
+"You made it" she says with a smile. "I was worried that you wouldn't find me.""
 <End>
 
-<ShortDesc>
+<SecondDesc>
 "Your life is in danger.  Long ago a maintenance man who worked here committed
 murder at this hotel.  I was his first victim and my soul has been trapped here
-ever since.  Over the years, I watched his many atrocities as he grew more evil,
-eventually practicing dark rituals of the occult.  He built this chamber, so he
-could do so in secrecy.  I have watched countless people suffer at his hands.
+ever since.  Over the years, I watched his many atrocities as he grew more 
+evil, eventually practicing dark rituals of the occult.  He built this chamber,
+so he could do so in secrecy.  I have watched countless people suffer at his 
+hands.
 
 He eventually grew very ill and died, but his spirit lingered on to haunt these
 grounds.  Due to his practice of the occult, he was able to continue with his
 killing, even after becoming a ghost himself.
 
-When the hotel went out of business, he still found a way to continue.  He lures
-travelers into the hotel, trapping them here.  When they eventually sleep, he is
-able to enter their souls and make them his.  He then forces them to take their
-own lives.  Many people have died this way, but you might be the first to escape
-this fate.  A chamber lies beyond this room, where you will find what you need
-to leave this place. The ghost points to a specific brick in the wall.
+When the hotel went out of business, he still found a way to continue.  He 
+lures travelers into the hotel, trapping them here.  When they eventually 
+sleep, he is able to enter their souls and make them his.  He peforms a ritual
+in this room that allows him to rip their souls from their bodies.  Many people
+have died this way, but you might be the first to escape this fate.  A chamber
+lies beyond this room, where you will find what you need to leave this place. 
+The ghost points to a specific brick in the wall.
 
 Press this and it will open the way.  Find what he holds and use it to escape.
 Tell others of this place, so that it can be cleansed of his evil.  Maybe then
@@ -609,8 +616,8 @@ I can be free of this madness.  Hurry, you do not have much time."
 The ghost fades away and leaves you alone in the room.
 <End>
 
-<RITUAL>
-<LongDesc>
+RITUAL
+<FirstDesc>
 Location: Ritual Room
 
 You are in a ritual room.  There's a pedestal in the middle of the room,
@@ -620,18 +627,18 @@ garden.
 Exits: Up
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Ritual Room
 
 You are in a ritual room.  There's a pedestal in the middle of the room,
 surrounded by symbols etched into the floor.  A door is open in the East wall.
 Stairs lead back up into the garden.
 
-Exits: East, Up
+Exits: 3 - East, Up
 <End>
 
-<BURIAL>
-<LongDesc>
+BURIAL
+<FirstDesc>
 Location: Burial Chamber
 
 You have entered a burial chamber.  The walls are lined with neatly stacked
@@ -640,95 +647,81 @@ the bodies when he was through with them.  A skeleton, still wearing its
 maintenance uniform, lies in a heap in the center of the room. The only exit
 is to the West.
 
-Exits: West
+Exits: 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location:
 
 You are in the burial chamber.  The remains of the maintenance man lay on the
 floor in the center of the room.  The only exit is to the West.
 
-Exits: West
+Exits: 4 - West
 <End>
 
-<BODYSEARCH>
-<LongDesc>
-Location: Burial Chamber
-
-You search the remains of the maintenance man and find a small key.  It says
-'Elevator' on the tag.
-<End>
-
-<PARKING>
-<LongDesc>
+PARKING
+<FirstDesc>
 Location: Parking Lot
 
 You have made it out of the hotel and into the side parking lot.  A pickup
 truck sits in the North end of the lot and your car is to the South.  The
 door back into the basement is to the West.
 
-Exits: North, South, West
+Exits: 1 - North, 2 - South, 4 - West
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Parking Lot
 
 You are standing in the hotel parking lot.  A pickup truck sits in the North
 end of the lot and your car is to the South.  The door back into the basement
 is to the West.
 
-Exits: North, South, West
+Exits: 1 - North, 2 - South, 4 - West
 <End>
 
-<TRUCK>
-<LongDesc>
+TRUCK
+<FirstDesc>
 Location: Abandonned Truck
 
 The truck is rusted, with the window glass shattered and lying on the ground
 around it.  All of the tires are flat and beyond repair.  This truck isn't
 going anywhere.  Maybe there's something in it you can use.
 
-Exits: South
+Exits: 2 - South
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Abandonned Truck
 
 You are back at the broken down truck.  There's nothing left to find here.
 
-Exits: South
+Exits: 2 - South
 <End>
 
-<TRUCKSEARCH>
-<LongDesc>
-Location: Abandonned Truck
-
-You rummage through the back of the truck and find a gas can.  With high hopes,
-you pick it up and hear gas sloshing around inside!
-<End>
-
-<CAR>
-<LongDesc>
+CAR
+<FirstDesc>
 Location: Your Car
 
 Your car sits exactly where you left it, although it's not going anywhere
 without gas.  The parking lot is to the North.
 
-Exits: North
+Exits: 1 - North
 <End>
 
-<ShortDesc>
+<SecondDesc>
 Location: Your Car
 
 Your car sits where you left it, all it needs is some gas.  The parking lot is
 to the North.
 
-Exits: North
+Exits: 1 - North
 <End>
 
-<WIN>
-<LongDesc>
+WIN
+<FirstDesc>
+Location: Your Car
+
 You pour the gas into your car, climb in and turn the key.  The engine rumbling
 to life is the sweetest sound you have ever heard.  As you put it in gear and
 pull out onto the road, the front door of the hotel bursts open.  You see the
@@ -736,4 +729,43 @@ ghost of the maintenance man staring at you with hatred in his eyes as you
 drive away.
 
 Congratulations!  You have successfully escaped the haunted hotel!
+<End>
+
+LOSE
+<FirstDesc>
+Location: Unknown
+
+As the time reaches midnight a weariness overcomes you.  You get light headed
+and can't keep your eyes open.  Your knees weaken and you fall to the ground.
+You try to push yourself back up, but your arms lack the strength.  Blackness
+envelopes you as you begin to fall to sleep.  The last thing your remember is
+an evil laughter ringing in your ears as you lose consciousness.
+<End>
+
+<SecondDesc>
+Location: Ritual Room
+
+You are awoken by the sound of strange chanting.  You don't know how long you
+have been asleep.  You open your eyes and find yourself back in the ritual
+room, sitting against the pedestal in the center.  The symbols in the floor
+glow an eerie green color.  You try to stand, but can't move your body.
+
+The spirit of the maintenance man appears before you.
+
+"It's no use struggling" he says.  "You are mine now."
+
+He reaches down, plunging his hand into your chest.  You scream in pain as
+you feel your soul being ripped from your body.  You are lost in excruciating
+pain and a blur of motion.  When it finally subsides, you are looking down at
+your dead body.
+
+"You belong to me now" the maintenance man says.  "Go up and join the others."
+
+He gestures to the stairs and you feel compelled to obey.  You go up the stairs
+into the garden and are surrounded by many other miserable looking ghosts.
+The woman who tried to help you stands in front of you, with a look of
+sadness and dispair on her face.
+
+"Meet your new companions" he says.  "You're going to be with us for a long,
+long time."
 <End>

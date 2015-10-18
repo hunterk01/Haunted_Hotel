@@ -123,14 +123,14 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="PlayerInputFunctions.cpp" />
-    <ClCompile Include="Rooms.cpp" />
+    <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="TimeKeeper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Inventory.h" />
-    <ClInclude Include="PlayerInputFunctions.h" />
-    <ClInclude Include="Rooms.h" />
+    <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="TimeKeeper.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ExamineDescriptions.txt" />

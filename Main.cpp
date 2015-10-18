@@ -3,7 +3,6 @@
 #include "Rooms.h"
 #define _WIN32_WINNT 0x0500
 #include <Windows.h>
-#include <mmsystem.h>
 
 int main()
 {
@@ -16,18 +15,15 @@ int main()
 	GetWindowRect(console, &r);
 	MoveWindow(console, r.left, r.top, 800, 600, TRUE);
 	
-	// Setup title screen, menu and music
-	PlaySound(TEXT("HouseOnTheHill.wav"), NULL, SND_LOOP | SND_ASYNC);
-	TitleScreen();
-	system("pause");
+	// Menu handles title screen, menu, and music
 	Menu(gameOver);
-	PlaySound(NULL, 0, SND_ASYNC);
 	
-	PrintRoom();
+	
+	
 
 
-	PlaySound(TEXT("HarbingerOfDoom.wav"), NULL, SND_LOOP | SND_ASYNC);
+	
 	system("pause");
-	PlaySound(NULL, 0, SND_ASYNC);
+	
 	return 0;
 }

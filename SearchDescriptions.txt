@@ -1,23 +1,83 @@
-<CABINET>
+CABINET
+<FirstDesc>
+Location: Kitchen
 
+You rummage through the cabinets and find a package of dried meat, sealed
+in plastic.  It looks like it hasn't spoiled yet.
 <End>
 
-<CART>
+<SecondDesc>
+Location: Kitchen
 
+You have already searched these cabinets.  There is nothing left to find here.
 <End>
 
-<VEND>
+CART
+<FirstDesc>
+Location: Hallway 2F West
 
+You search the housekeeping cart and find a book of matches.
 <End>
 
-<SHED>
+<SecondDesc>
+Location: Hallway 2F West
 
+You have already searched this cart.  There is nothing left to find here.
 <End>
 
-<BODY>
+VEND
+<FirstDesc>
+Location: Hallway 3F East
 
+You search the vending machine and find an old coin in the coin return.
 <End>
 
-<TRUCK>
+<SecondDesc>
+Location: Hallway 2F West
 
+You have already searched this machine.  There is nothing left to find here.
+<End>
+
+SHED
+<FirstDesc>
+Location: Shed Interior
+
+After digging through numerous rusted, and broken, tools and gardening
+equipment, you find a crowbar that looks to still be in good shape.
+<End>
+
+<SecondDesc>
+Location: Shed Interior
+
+You have already searched the shed.  There's nothing left to find here.
+
+Exits: South
+<End>
+
+BODY
+<FirstDesc>
+Location: Burial Chamber
+
+You search the remains of the maintenance man and find a small key.  It says
+'Elevator' on the tag.
+<End>
+
+<SecondDesc>
+Location: Burial Chamber
+
+You have already seached this body.  There's nothing left to find here.
+<End>
+
+TRUCK
+<FirstDesc>
+Location: Abandonned Truck
+
+You rummage through the back of the truck and find a gas can.  With high hopes,
+you pick it up and hear gas sloshing around inside!
+<End>
+
+<SecondDesc>
+Location: Abandonned Truck
+
+You have already seached this truck.  There's nothing left to find here.
 <End>

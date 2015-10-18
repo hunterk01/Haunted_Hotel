@@ -1,7 +1,7 @@
 #pragma once
 
-void AddToInventory(char itemToAdd);
-void RemoveFromInventory(char itemToRemove);
-bool HasItemCheck(char itemToCheck);
-bool ValidItemUseCheck(char itemToCheck);
+void AddToInventory(std::string itemToAdd);
+void RemoveFromInventory(std::string itemToRemove);
+bool HasItemCheck(std::string itemToCheck);
+std::string UseItem();
 void PrintInventory();
