@@ -255,10 +255,12 @@ BALLROOM
 Location: Ballroom
 
 You're in a grand ballroom.  These hardwood floors have undoubtedly seen many
-guests dancing late into the evening.  An old record player sits in the corner
-of the room. There's a door on the North that leads out to the garden behind
-the hotel.  You try the handle, but it's locked.  The door to the West leads
-back to the Lobby.
+guests dancing late into the evening.  There's a door on the North that leads
+out to the garden behind the hotel.  You try the handle, but it's locked.  An
+old record player sits in the corner of the room.  It has a horn to project
+the sound into the room and a record on the turntable, with the needle already
+in place.  You notice a small, square shaped, hole in the side of it. The door
+to the West leads back to the Lobby.
 
 Exits: 4 - West
 <End>
@@ -284,14 +286,18 @@ spectacle.
 
 As the song comes to an end, the spirits stop dancing and move toward the North
 door as if to adjourn outside to cool off.  They all pass through the door, out
-of sight.  As the last of the dancers passes through, you hear a clicking sound
-as the lock on the door unlatches.
+of sight.  As the last of the dancers stops, then reaches his hand toward the
+handle.  You hear a clicking sound as the door unlocks.  The ghost looks at you
+with a hopeful stare, which turns worry as he looks back at the ghost of the
+maintenance worker.  He shivers and quickly passes through the door into the
+garden.
 
-You notice that the ghost of the maintenance worker has not left with the 
-others.  His earlier look of pleasure has changed to one of anger as he glares
-at the now unlocked door.  He lets out a scream of rage and fades out of sight.
-You feel a chill run down your spine as you think about the scene you just 
-witnessed.
+You look at the ghost of the maintenance worker.  His earlier look of pleasure
+has changed to one of anger as he glares at the now unlocked door.  He moves
+over to to and reaches his hand out to the handle.  Nothing happens, so he 
+tries again, with no affect.  He lets out a scream of rage and fades out of
+sight.  You feel a chill run down your spine as you think about the scene you
+just witnessed.
 <End>
 
 HALL2W

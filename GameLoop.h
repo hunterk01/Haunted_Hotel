@@ -55,7 +55,7 @@ void LoseCondition();
 // Information display functions
 void PrintRoom(std::string inState, int inDescNum);
 void PrintCommands();
-void SearchHandler(char inObject);
+void SearchHandler(std::string inObject);
 void ExamineHandler(std::string inItem);
-void PressHandler(char inObject);
-void ShowHelp();
+void ElevatorControls();
+void ShowDirections();

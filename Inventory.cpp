@@ -55,25 +55,26 @@ std::string UseItem()
 	
 	if (itemCount == 0)
 	{
-		return 0;
+		return "0";
 	}
 	else
 	{
+		std::cout << "Which item would you like to use?" << std::endl;
+
+		for (int i = 0; i < itemCount; ++i)
+		{
+			std::cout << i + 1 << " - " << playerItems[itemCount] << std::endl;
+		}
+		std::cout << "Your choice: ";
+
 		while (itemChoice == 0)
 		{
-			std::cout << "Which item would you like to use?" << std::endl;
-
-			for (int i = 0; i < itemCount; ++i)
-			{
-				std::cout << i + 1 << " - " << playerItems[itemCount] << std::endl;
-				return "0";
-			}
-			std::cout << "Your choice: ";
 			std::cin >> itemChoice;
 
 			if (itemChoice > itemCount + 1)
 			{
 				itemChoice = 0;
+				std::cout << "Invalid.  Choose again: ";
 			}
 			else if (10 > isdigit(itemChoice) && isdigit(itemChoice) > 0)
 			{
@@ -86,6 +87,7 @@ std::string UseItem()
 			}
 		}
 	}
+	return "0";
 }
 
 // Print a list of the items currently in the itemList char array

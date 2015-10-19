@@ -1,7 +1,7 @@
   
   Instructions:
   Haunted Hotel is a text adventure game where you play a traveler who
-  has been trapped inside an abandonned hotel.  Using simple word commands
+  has been trapped inside an abandonned hotel.  Using simple commands
   you must figure out how to escape before the spirit that haunts the hotel
   takes your soul.
 
@@ -12,22 +12,20 @@
 
   As you travel through the hotel, you will find many items that might help.
   you  These will be put into your inventory, which you can view anytime by
-  pressing the <F1> key.  All other actions will be controlled by using the
-  commands listed below.
+  pressing the I key.  All other actions will be controlled by using the
+  keys listed below.
   
-  Commands:
-  North - This will move you through North facing exits
-  South - This will move you through South facing exits
-  East - This will move you through East facing exits
-  West - This will move you through Up facing exits
-  Up - This will move you through exits heading up
-  Down - This will move you through exits heading down
-  Take - This is used in combination with item names to pickup an item, such
-         as 'Take Meathook'.
-  Use - This will be used in combination with item names to use an item, such
-        as 'Use Meathook'.  It can also be used to interact with evironmental
-        objects that can't be picked up.
-  Press - This is used in combination with objects that need to be pressed
-  Examine - Use this to examine an item in your inventory
-  Inventory - Open a list of the items in your inventory
-  Help - See a list of available commands
+  Directions:
+  Press the number or letter keys listed to perform the associated actions.
+
+  1 - North - This will move you through North facing exits
+  2 - South - This will move you through South facing exits
+  3 - East - This will move you through East facing exits
+  4 - West - This will move you through Up facing exits
+
+  S - Search - Will search a room for hidden items
+  T - Take - Will take an item that can be picked up
+  U - Use - Will use an item of your choosing from your inventory
+  P - Press - Will interact with pressable items in the game world
+  I - Inventory - Opens a list of the items in your inventory
+  D - Directions - Will open this list of directions in game

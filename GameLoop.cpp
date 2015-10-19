@@ -7,7 +7,7 @@
 #include "TimeKeeper.h"
 
 // Process flow variables
-bool rangBell = false, tookPen = false;
+bool rangBell = false, tookPen = false, elevKeyUsed = false;
 std::string currentState = "INTRO";
 
 // This section will handle all of the game flow
@@ -147,6 +147,7 @@ void Lobby()
 		if (RM_Lobby.visited == false)
 		{
 			PrintRoom(currentState, 1);
+			std::cout << "Press the D key anytime to bring up the game directions." << std::endl;
 			RM_Lobby.visited = true;
 		}
 		else
@@ -189,6 +190,7 @@ void Lobby()
 				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
 				system("pause");
 				choice[0] = '0';
+				TimeIncrease(1);
 			}
 		}
 		else if (choice[0] == 'p')
@@ -202,10 +204,15 @@ void Lobby()
 			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
 			system("pause");
 			choice[0] = '0';
+			TimeIncrease(2);
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -215,7 +222,7 @@ void Lobby()
 	}
 }
 
-void FrontDesk() // Need to setup 2nd description
+void FrontDesk()
 {
 	char choice[32] = "0";
 	if (choice[0] = '0')
@@ -267,6 +274,7 @@ void FrontDesk() // Need to setup 2nd description
 				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
 				system("pause");
 				choice[0] = '0';
+				TimeIncrease(1);
 			}
 		}
 		else if (choice[0] == 'p')
@@ -285,12 +293,16 @@ void FrontDesk() // Need to setup 2nd description
 		{
 			std::cout << std::endl << "Your search the desk and find nothing." << std::endl << std::endl;
 			system("pause");
-			TimeIncrease(2);
 			choice[0] = '0';
+			TimeIncrease(2);
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -353,12 +365,14 @@ void Guestbook() // Need to define the useItem() function, then test it here
 				if (itemToUse == "Pen")
 				{
 					currentState = "SIGNBOOK";
+					TimeIncrease(1);
 				}
 				else
 				{
 					std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
 					system("pause");
 					choice[0] = '0';
+					TimeIncrease(1);
 				}
 			}
 		}
@@ -370,12 +384,16 @@ void Guestbook() // Need to define the useItem() function, then test it here
 		{
 			std::cout << std::endl << "Your search the desk and find nothing." << std::endl << std::endl;
 			system("pause");
-			TimeIncrease(2);
 			choice[0] = '0';
+			TimeIncrease(2);
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -412,35 +430,313 @@ void Signbook()
 	}
 }
 
-void Elevator1fExt() // Not done yet
+
+void DiningRoom()
 {
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
+		if (RM_DiningRoom.visited == false)
+		{
+			PrintRoom(currentState, 1);
+			RM_DiningRoom.visited = true;
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
 		std::cin >> choice;
-		if (choice[0] == '3')  currentState = "FDESK";
-		else if (choice[0] == 'p')  currentState = "ELEVSTART";
-		else if (choice[0] == 't')
-		{
 
+		if (choice[0] == '1')
+		{
+			currentState = "KITCHEN";
+			TimeIncrease(1);
 		}
-		else if (choice[0] == 'u')
+		else if (choice[0] == '3')
 		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
+			currentState = "LOBBY";
+			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
 		{
+			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+			TimeIncrease(2);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+				TimeIncrease(1);
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			std::cout << std::endl << "There's nothing here to press." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
 
+		else if (choice[0] == 'i')
+		{
+			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
+		}
+	}
+	else
+	{
+		choice[0] = '0';
+		system("CLS");
+	}
+}
+
+void Kitchen()
+{
+	char choice[32] = "0";
+	if (choice[0] = '0')
+	{
+		if (RM_Kitchen.visited == false)
+		{
+			PrintRoom(currentState, 1);
+			RM_Kitchen.visited = true;
+		}
+		else
+		{
+			PrintRoom(currentState, 1);
+		}
+		std::cin >> choice;
+
+		if (choice[0] == '2')
+		{
+			currentState = "DINING";
+		}
+		else if (choice[0] == 's')
+		{
+			SearchHandler("MEAT");
+			AddToInventory("MEAT");
+			TimeIncrease(5);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			std::cout << std::endl << "There's nothing here to press." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
+		}
+	}
+	else
+	{
+		choice[0] = '0';
+		system("CLS");
+	}
+}
+
+void Ballroom()
+{
+	char choice[32] = "0";
+	if (choice[0] = '0')
+	{
+		if (RM_Ballroom.visited == false)
+		{
+			PrintRoom(currentState, 1);
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
+		std::cin >> choice;
+		
+		if (choice[0] == '1')
+		{
+			if (RM_Ballroom.visited == false)
+			{
+				choice[0] = '0';
+			}
+			else
+			{
+				currentState = "GARDENENT";
+				TimeIncrease(1);
+			}
+		}
+		else if (choice[0] == '4')
+		{
+			currentState = "LOBBY";
+			TimeIncrease(1);
+		}
+		else if (choice[0] == 's')
+		{
+			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+			TimeIncrease(3);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else if (itemToUse == "HANDLE")
+			{
+				currentState == "RECORD";
+				RM_Ballroom.visited = true;
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			std::cout << std::endl << "There's nothing here to press." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+
+		else if (choice[0] == 'i')
+		{
+			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
+		}
+	}
+	else
+	{
+		choice[0] = '0';
+		system("CLS");
+	}
+}
+
+void RecordPlayer()
+{
+	PrintRoom(currentState, 1);
+	currentState = "BALLROOM";
+	TimeIncrease(5);
+}
+
+///// Elevator exteriors and interior /////
+
+void Elevator1fExt()
+{
+	char choice[32] = "0";
+	if (choice[0] = '0')
+	{
+		if (RM_Elev1fExt.visited == false)
+		{
+			PrintRoom(currentState, 1);
+			RM_Elev1fExt.visited = true;
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
+		std::cin >> choice;
+
+		if (choice[0] == '3')
+		{
+			currentState = "FDESK";
+			TimeIncrease(1);
+		}
+		else if (choice[0] == 's')
+		{
+			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+			TimeIncrease(1);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			currentState = "ELEVSTART";
+			TimeIncrease(2);
+		}
+
+		else if (choice[0] == 'i')
+		{
+			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -452,39 +748,86 @@ void Elevator1fExt() // Not done yet
 
 void ElevatorStart()
 {
+	if (RM_ElevStart.visited == false)
+	{
 		PrintRoom(currentState, 1);
-		currentState = "ELEVINT";
-		system("pause");
+		RM_ElevStart.visited = true;
+	}
+	else
+	{
+		PrintRoom(currentState, 2);
+	}
+
+	currentState = "ELEVINT";
+	system("pause");
 }
 
-void Elevator2fExt() // Not done yet
+void Elevator2fExt()
 {
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
+		if (RM_Elev2fExt.visited == false)
+		{
+			PrintRoom(currentState, 1);
+			RM_Elev2fExt.visited = true;
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
 		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
 
+		if (choice[0] == '3')
+		{
+			currentState = "HALL2E";
+			TimeIncrease(1);
 		}
-		else if (choice[0] == 'u')
+		else if (choice[0] == '3')
 		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
+			currentState = "HALL2W";
+			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
 		{
-
+			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+			TimeIncrease(1);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			currentState = "ELEVSTART";
+			TimeIncrease(2);
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -494,34 +837,72 @@ void Elevator2fExt() // Not done yet
 	}
 }
 
-void Elevator3fExt() // Not done yet
+void Elevator3fExt()
 {
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
+		if (RM_Elev3fExt.visited == false)
+		{
+			PrintRoom(currentState, 1);
+			RM_Elev3fExt.visited = true;
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
 		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
 
+		if (choice[0] == '3')
+		{
+			currentState = "HALL3E";
+			TimeIncrease(1);
 		}
-		else if (choice[0] == 'u')
+		else if (choice[0] == '3')
 		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
+			currentState = "HALL3W";
+			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
 		{
-
+			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+			TimeIncrease(1);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			currentState = "ELEVSTART";
+			TimeIncrease(2);
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -531,34 +912,67 @@ void Elevator3fExt() // Not done yet
 	}
 }
 
-void ElevatorBsmtExt() // Not done yet
+void ElevatorBsmtExt()
 {
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
+		if (RM_ElevBsmtExt.visited == false)
+		{
+			PrintRoom(currentState, 1);
+			RM_ElevBsmtExt.visited = true;
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
 		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
 
-		}
-		else if (choice[0] == 'u')
+		if (choice[0] == '2')
 		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
+			currentState = "FDESK";
+			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
 		{
-
+			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+			TimeIncrease(1);
+		}
+		else if (choice[0] == 't')
+		{
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
+		else if (choice[0] == 'u')
+		{
+			std::string itemToUse = UseItem();
+			if (itemToUse == "0")
+			{
+				std::cout << "You don't have any items to use." << std::endl << std::endl;
+				system("Pause");
+			}
+			else
+			{
+				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
+		}
+		else if (choice[0] == 'p')
+		{
+			currentState = "ELEVSTART";
+			TimeIncrease(2);
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -577,25 +991,33 @@ void ElevatorInt() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+			std::cout << std::endl << "There's nothing to search in here." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
+		}
 		else if (choice[0] == 't')
 		{
-
+			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+			system("pause");
+			choice[0] = '0';
 		}
 		else if (choice[0] == 'u')
 		{
-
+			// Add item check and key usage
 		}
 		else if (choice[0] == 'p')
 		{
-
-		}
-		else if (choice[0] == 's')
-		{
-
+			ElevatorControls();
 		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -605,153 +1027,7 @@ void ElevatorInt() // Not done yet
 	}
 }
 
-void DiningRoom() // Not done yet
-{
-	char choice[32] = "0";
-	if (choice[0] = '0')
-	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
-		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
-
-		}
-		else if (choice[0] == 'u')
-		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
-		}
-		else if (choice[0] == 's')
-		{
-
-		}
-		else if (choice[0] == 'i')
-		{
-			PrintInventory();
-		}
-	}
-	else
-	{
-		choice[0] = '0';
-		system("CLS");
-	}
-}
-
-void Ktichen() // Not done yet
-{
-	char choice[32] = "0";
-	if (choice[0] = '0')
-	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
-		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
-
-		}
-		else if (choice[0] == 'u')
-		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
-		}
-		else if (choice[0] == 's')
-		{
-
-		}
-		else if (choice[0] == 'i')
-		{
-			PrintInventory();
-		}
-	}
-	else
-	{
-		choice[0] = '0';
-		system("CLS");
-	}
-}
-
-void Ballroom() // Not done yet
-{
-	char choice[32] = "0";
-	if (choice[0] = '0')
-	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
-		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
-
-		}
-		else if (choice[0] == 'u')
-		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
-		}
-		else if (choice[0] == 's')
-		{
-
-		}
-		else if (choice[0] == 'i')
-		{
-			PrintInventory();
-		}
-	}
-	else
-	{
-		choice[0] = '0';
-		system("CLS");
-	}
-}
-
-void RecordPlayer() // Not done yet
-{
-	char choice[32] = "0";
-	if (choice[0] = '0')
-	{
-		PrintRoom(currentState, 1);
-		PrintCommands();
-		std::cin >> choice;
-		if (choice[0] == '1')  currentState = "FDESK";
-		else if (choice[0] == 't')
-		{
-
-		}
-		else if (choice[0] == 'u')
-		{
-
-		}
-		else if (choice[0] == 'p')
-		{
-
-		}
-		else if (choice[0] == 's')
-		{
-
-		}
-		else if (choice[0] == 'i')
-		{
-			PrintInventory();
-		}
-	}
-	else
-	{
-		choice[0] = '0';
-		system("CLS");
-	}
-}
+///// Second floor locations /////
 
 void Hallway2fWest() // Not done yet
 {
@@ -762,6 +1038,10 @@ void Hallway2fWest() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -774,13 +1054,14 @@ void Hallway2fWest() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -799,6 +1080,10 @@ void Hallway2fEast() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -811,13 +1096,14 @@ void Hallway2fEast() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -836,6 +1122,10 @@ void Room237() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -848,13 +1138,14 @@ void Room237() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -863,6 +1154,8 @@ void Room237() // Not done yet
 		system("CLS");
 	}
 }
+
+///// Third floor locations /////
 
 void Hallway3fWest() // Not done yet
 {
@@ -873,6 +1166,10 @@ void Hallway3fWest() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -885,13 +1182,14 @@ void Hallway3fWest() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -910,6 +1208,10 @@ void Hallway3fEast() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -922,13 +1224,14 @@ void Hallway3fEast() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -947,6 +1250,10 @@ void Room305() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -959,13 +1266,14 @@ void Room305() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -984,6 +1292,10 @@ void BookDrop() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -996,13 +1308,14 @@ void BookDrop() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1011,6 +1324,8 @@ void BookDrop() // Not done yet
 		system("CLS");
 	}
 }
+
+///// Basement locations /////
 
 void Basement() // Not done yet
 {
@@ -1021,6 +1336,10 @@ void Basement() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1033,13 +1352,14 @@ void Basement() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1058,6 +1378,10 @@ void ChainBreak() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1070,13 +1394,14 @@ void ChainBreak() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1085,6 +1410,9 @@ void ChainBreak() // Not done yet
 		system("CLS");
 	}
 }
+
+
+///// Garden locations /////
 
 void GardenEntrance() // Not done yet
 {
@@ -1095,6 +1423,10 @@ void GardenEntrance() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1107,13 +1439,14 @@ void GardenEntrance() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1132,6 +1465,10 @@ void GardenPath() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1144,13 +1481,14 @@ void GardenPath() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1169,6 +1507,10 @@ void Fountain() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1181,13 +1523,14 @@ void Fountain() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1206,6 +1549,10 @@ void ShedExterior() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1218,13 +1565,14 @@ void ShedExterior() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1243,6 +1591,10 @@ void ShedInterior() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1255,13 +1607,14 @@ void ShedInterior() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1280,6 +1633,10 @@ void FeedTheDog() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1292,13 +1649,14 @@ void FeedTheDog() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1317,6 +1675,10 @@ void SecretPassage() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1329,13 +1691,14 @@ void SecretPassage() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1354,6 +1717,10 @@ void DarkRoom() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1366,13 +1733,14 @@ void DarkRoom() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1391,6 +1759,10 @@ void LitRoom() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1403,13 +1775,14 @@ void LitRoom() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1428,6 +1801,10 @@ void RitualRoom() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1440,13 +1817,14 @@ void RitualRoom() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1465,6 +1843,10 @@ void BurialChamber() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1477,13 +1859,14 @@ void BurialChamber() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1492,6 +1875,9 @@ void BurialChamber() // Not done yet
 		system("CLS");
 	}
 }
+
+
+///// Parking lot locations and win/lose conditions /////
 
 void ParkingLot() // Not done yet
 {
@@ -1502,6 +1888,10 @@ void ParkingLot() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1514,13 +1904,14 @@ void ParkingLot() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1539,6 +1930,10 @@ void AbandonnedTruck() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1551,13 +1946,14 @@ void AbandonnedTruck() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1576,6 +1972,10 @@ void YourCar() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1588,13 +1988,14 @@ void YourCar() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1613,6 +2014,10 @@ void WinCondition() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1625,13 +2030,14 @@ void WinCondition() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1650,6 +2056,10 @@ void LoseCondition() // Not done yet
 		PrintCommands();
 		std::cin >> choice;
 		if (choice[0] == '1')  currentState = "FDESK";
+		else if (choice[0] == 's')
+		{
+
+		}
 		else if (choice[0] == 't')
 		{
 
@@ -1662,13 +2072,14 @@ void LoseCondition() // Not done yet
 		{
 
 		}
-		else if (choice[0] == 's')
-		{
 
-		}
 		else if (choice[0] == 'i')
 		{
 			PrintInventory();
+		}
+		else if (choice[0] == 'd')
+		{
+			ShowDirections();
 		}
 	}
 	else
@@ -1756,29 +2167,101 @@ void PrintCommands()
 }
 
 // Check for searchable object and process results
-void SearchHandler(char inObject)
+void SearchHandler(std::string inObject)
 {
+	system("CLS");
+	std::string line_;
+	std::ifstream file_("SearchDescriptions.txt");
 
+	PrintTime();
+	std::cout << std::endl << std::endl;
+	if (file_.is_open())
+	{
+
+	}
 }
 
 // Check for examinable object and process results
 void ExamineHandler(std::string inItem)
 {
+	system("CLS");
+	std::string line_;
+	std::ifstream file_("ExamineDescriptions.txt");
 
+	PrintTime();
+	std::cout << std::endl << std::endl;
+	if (file_.is_open())
+	{
+		while (std::getline(file_, line_))
+		{
+			if (line_ == inItem)
+			{
+				while (std::getline(file_, line_))
+				{
+					if (line_ != "<End>")
+					{
+						std::cout << line_ << "\n";
+					}
+					else return;
+				}
+			}
+		}
+	}
 }
 
-// Check for pressable object and process results
-void PressHandler(char inObject)
+void ElevatorControls()
 {
-	
+	char buttonChoice[32] = "0";
+
+	std::cout << std::endl << "Which button? ";
+	std::cin >> buttonChoice[32];
+
+	while (buttonChoice[0] == '0')
+	{
+		if (buttonChoice[0] == '1')
+		{
+			currentState = "ELEV1X";
+			TimeIncrease(1);
+		}
+		else if (buttonChoice[0] == '2')
+		{
+			currentState = "ELEV2X";
+			TimeIncrease(1);
+		}
+		else if (buttonChoice[0] == '3')
+		{
+			currentState = "ELEV3X";
+			TimeIncrease(1);
+		}
+		else if (buttonChoice[0] == 'b')
+		{
+			if (elevKeyUsed == false)
+			{
+				std::cout << "That button won't work without a key." << std::endl
+					<< "Which button? ";
+				std::cin >> buttonChoice[32];
+			}
+			else
+			{
+				currentState = "ELEVBX";
+				TimeIncrease(1);
+			}
+		}
+		else
+		{
+			buttonChoice[0] = '0';
+		}
+	}
 }
 
 // Show command options
-void ShowHelp()
+void ShowDirections()
 {
-	std::cout << "Command List:" << std::endl
-		<< "Directions: North, South, East, West, Up, Down" << std::endl
-		<< "Actions: Search, Take, Use, Examine, Press" << std::endl
-		<< "Utility: Iventory, Help" << std::endl << std::endl
-		<< "What would you like to do? ";
+	system("CLS");
+
+	std::cout << "Directions:" << std::endl << std::endl
+		<< "Movement: \n1 - North \n2 - South \n3 - East \n4 - West" << std::endl << std::endl
+		<< "Actions: \nS - Search \nT - Take \nU - Use \nP - Press \nI - Inventory \nD - Directions" << std::endl << std::endl;
+
+	system("pause");
 }

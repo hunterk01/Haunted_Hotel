@@ -33,18 +33,11 @@ A metal crowbar.  It's rusty in a few spots, but still
 quite sturdy.
 <End>
 
-ELEVKEY
+SMALLKEY
 A small key with a tag hanging from it with the word
 "Basement" handwritten on it.
 <End>
 
 GAS
 A red metal gas can.  Liquid sloshes around in it.
-<End>
-
-RECPLAYER
-An old record player, with a horn for projecting sound.
-A record sits on the turn table with the needle already
-in place.  There's a small square hole in the side of 
-the player.
 <End>
