@@ -113,8 +113,8 @@ Location: Front Desk
 
 As you sign your name in the book and set the pen down, you hear the jangling 
 of keys.  You look up to see a room key rise up off its hook and float toward 
-you.  You hold out your hand and it comes to rest in your palm.  It says Room
-237 on the tag.  The lobby is to the south and an elevator is to the West.
+you.  You hold out your hand and it comes to rest in your palm.  The tag
+attached to the key says Room 237ag.  The lobby is to the south and an elevator is to the West.
 
 Exits: 2 - South, 4 - West
 <End>
@@ -142,7 +142,7 @@ Exits: 3 - East
 
 ELEVSTART
 <FirstDesc>
-Location: Elevator 1F
+Location: Elevator 1F Exterior
 
 The elevator whirs to life and you hear the screech of long neglected wheels
 turning. You hear the elevator car moving toward your floor.  With a ding, the
@@ -154,9 +154,9 @@ Location: Elevator 1F
 With a ding, the elevator door opens and you step inside.
 <End>
 
-<ELEV2X>
+ELEV2X
 <FirstDesc>
-Location: Elevator 2F
+Location: Elevator 2F Exterior
 
 You are in the second floor hallway.  The elevator is before you with a button
 on the wall next to it.  The hallway runs to the West and East, with guest room
@@ -167,7 +167,7 @@ Exits: 3 - East, 4 - West
 
 ELEV3X
 <FirstDesc>
-Location: Elevator 3F
+Location: Elevator 3F Exterior
 
 You are in the third floor hallway.  Doors line the hallway to the East and 
 West.  The elevator stands before you with a button on the wall next to it.
@@ -177,7 +177,7 @@ Exits: 3 - East, 4 - West
 
 ELEVBX
 <State:FirstDesc>
-Location: Elevator Basement
+Location: Elevator Basement Exterior
 
 You are in the basement hallway.  The elevator stands before you with a button
 on the wall next to it.  A dimly lit corridor runs to the South.
@@ -194,18 +194,14 @@ time, but time has not been kind to it.  The fabric on the walls is now torn
 and faded, and the once shiny metal, now left dull and scratched.  There are 
 four buttons on the control panel.  Numbers 1, 2, and 3 for the top floors and
 B for the basement.  The basement button also has a slot next to it for a key.
-
-Press 1 for first floor, 2 for  second, 3 for  third, and B for basement.
 <End>
 
 <SecondDesc>
 Location: Elevator Interior
 
 You are standing in the hotel's elevator.  There are four buttons on the 
-control panel.  Numbers 1, 2, and 3 for the top floors and B for the basement.  The 
-basement button also as a slot next to it for a key.
-
-Press 1 for first floor, 2 for  second, 3 for  third, and B for basement.
+control panel.  Numbers 1, 2, and 3 for the top floors and B for the basement.
+The basement button also as a slot next to it for a key.
 <End>
 
 DINING
@@ -298,6 +294,7 @@ over to to and reaches his hand out to the handle.  Nothing happens, so he
 tries again, with no affect.  He lets out a scream of rage and fades out of
 sight.  You feel a chill run down your spine as you think about the scene you
 just witnessed.
+
 <End>
 
 HALL2W
@@ -338,13 +335,13 @@ Location: Room 237
 You unlock the door and enter the room.  You find it surprisingly clean and it
 looks as if someone has stayed in here recently.  You are overcome with a
 feeling of drowsiness and you feel like lying down for a while.  As you sit
-down on the bed, you hear the whisper of a female voice say, 'No, you must not
-stay here.'
+down on the bed, you hear the whisper of a female voice say, 
+"No, you must not stay here.""
 
-'Why not?  What will happen?' you speak to an empty room.
+"Why not?  What will happen?" you speak to an empty room.
 
-'I cannot say more, or he will know that I am helping you' the voice replies.
-'Come find me and I will explain all.  I am in the garden, at the fountain.'
+"I cannot say more, or he will know that I am helping you" the voice replies.
+"Come find me and I will explain all.  I am in the garden, at the fountain."
 
 The drowsiness fades and you get the feeling that you should leave this room
 fast.
@@ -358,7 +355,7 @@ Location: Room 237
 You are back in room 237, but the female voice is no longer present.  You feel
 a sense of dread as you look at the bed.  You had best not stay here long.
 
-Exits: 1 - North
+Exits: 2 - South
 <End>
 
 HALL3W
@@ -369,17 +366,17 @@ You're in the West wing of the third floor hallway.  One of the room doors on
 the North wall is open.  The room number on the door reads 304.  The hallway
 runs to the East.
 
-Exits: 1 - North, East
+Exits: 1 - North, 3 - East
 <End>
 
 <SecondDesc>
-Location: Hallway 3F East
+Location: Hallway 3F West
 
 You're in the West wing of the third floor hallway.  The door to room 304 is
 closed.  You don't want to go back in there anyway. The hallway runs to the
 West.
 
-Exits: 4 - West
+Exits: 3 - East
 <End>
 
 HALL3E
@@ -442,6 +439,7 @@ moment longer, then slams back down on the nighstand.
 In a panic, you stumble out of the room and back into the hallway.  
 
 '...and stay out!' the voice shouts as the door slams shut.
+
 <End>
 
 BASEMENT
@@ -567,9 +565,9 @@ You hear something click into place.  Moments later, the water starts to drain
 from the fountain, until nothing remains but a slimy film covering the fountain
 bottom.  You hear a grinding sound of stone on stone as the fountain bottom
 starts to move.  The stone bottom parts to reveal a narrow stairway leading
-down into the darkness.  The garden path leads East and South.
+North, down into the darkness.  The garden path leads East and South.
 
-Exits: 2 - South, 3 - East, Down
+Exits: 1 - North, 2 - South, 3 - East
 <End>
 
 RITUALDIM
@@ -578,9 +576,9 @@ Location: Dim Room
 
 The room is barely lit from the light making it down the stairs.  You can just
 make out the form of a pedestal in the center of the room, with a single candle
-sitting on top.  The stairs up lead back out into the garden.
+sitting on top.  The stairs up lead to the South, back out into the garden.
 
-Exit: Up
+Exit: 2 - South
 <End>
 
 RITUALLIT
@@ -627,10 +625,10 @@ RITUAL
 Location: Ritual Room
 
 You are in a ritual room.  There's a pedestal in the middle of the room,
-surrounded by symbols etched into the floor.  Stairs lead back up into the
-garden.
+surrounded by symbols etched into the floor.  Stairs lead to the South, 
+back up into the garden.
 
-Exits: Up
+Exits: 2 - South
 <End>
 
 <SecondDesc>
@@ -638,9 +636,19 @@ Location: Ritual Room
 
 You are in a ritual room.  There's a pedestal in the middle of the room,
 surrounded by symbols etched into the floor.  A door is open in the East wall.
-Stairs lead back up into the garden.
+Stairs lead South, back up into the garden.
 
-Exits: 3 - East, Up
+Exits: 2 - South, 3 - East
+<End>
+
+PRESSBUTTON
+<FirstDesc>
+Location: Ritual Room
+
+You press the brick that the ghost showed you.  Dust and loose mortar fall
+down the surface of the wall as it moves back into the wall.  You hear the
+sound of gears turning, followed by stone grinding against stone as a part
+of the East wall moves, revealing an opening.
 <End>
 
 BURIAL

@@ -50,7 +50,7 @@ bool HasItemCheck(std::string itemToCheck)
 // that the player chooses.
 std::string UseItem()
 {
-	int itemChoice = 0;
+	int choice = 0;
 	std::cout << std::endl;
 	
 	if (itemCount == 0)
@@ -63,26 +63,26 @@ std::string UseItem()
 
 		for (int i = 0; i < itemCount; ++i)
 		{
-			std::cout << i + 1 << " - " << playerItems[itemCount] << std::endl;
+			std::cout << i + 1 << " - " << playerItems[i] << std::endl << std::endl;
 		}
 		std::cout << "Your choice: ";
 
-		while (itemChoice == 0)
+		while (choice == 0)
 		{
-			std::cin >> itemChoice;
+			std::cin >> choice;
 
-			if (itemChoice > itemCount + 1)
+			if (choice > itemCount)
 			{
-				itemChoice = 0;
 				std::cout << "Invalid.  Choose again: ";
+				choice = 0;
 			}
-			else if (10 > isdigit(itemChoice) && isdigit(itemChoice) > 0)
+			else if (10 > choice && choice > 0)
 			{
-				return (playerItems[itemChoice - 1]);
+				return (playerItems[choice - 1]);
 			}
 			else
 			{
-				itemChoice = 0;
+				choice = 0;
 				system("CLS");
 			}
 		}
@@ -114,7 +114,7 @@ void PrintInventory()
 		{
 			for (int i = 0; i < itemCount; ++i)
 			{
-				std::cout << i + 1 << " - " << playerItems[itemCount - 1] << std::endl;
+				std::cout << i + 1 << " - " << playerItems[i - 1] << std::endl;
 			}
 			std::cout << std::endl << "Choose a number to examine and item, or press 0 to exit: ";
 			std::cin >> itemChoice;
@@ -122,7 +122,7 @@ void PrintInventory()
 			{
 				itemChoice = -1;
 			}
-			else if (10 > isdigit(itemChoice) && isdigit(itemChoice) > 0)
+			else if (10 > itemChoice && itemChoice > 0)
 			{
 				ExamineHandler(playerItems[itemChoice - 1]);
 			}
