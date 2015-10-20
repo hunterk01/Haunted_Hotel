@@ -27,7 +27,7 @@ void RemoveFromInventory(std::string itemToRemove)
 				playerItems[i] = playerItems[i + 1];
 				i++;
 			}
-			playerItems[i][32] = '\0';
+			playerItems[i] = '\0';
 			break;
 		}
 	}
@@ -94,12 +94,14 @@ std::string UseItem()
 void PrintInventory()
 {
 	bool done = false;
-	int itemChoice = -1;
+	int itemChoice;
 
 	system("CLS");
 	
 	while (!done)
 	{
+		itemChoice = -1;
+		
 		std::cout << "===============" << std::endl
 			<< "   Inventory" << std::endl
 			<< "===============" << std::endl;
@@ -110,21 +112,23 @@ void PrintInventory()
 			system("CLS");
 			return;
 		}
-		else if (itemChoice == -1)
+		while (itemChoice == -1)
 		{
 			for (int i = 0; i < itemCount; ++i)
 			{
-				std::cout << i + 1 << " - " << playerItems[i - 1] << std::endl;
+				std::cout << i + 1 << " - " << playerItems[i] << std::endl;
 			}
 			std::cout << std::endl << "Choose a number to examine and item, or press 0 to exit: ";
 			std::cin >> itemChoice;
-				if (itemChoice > itemCount + 1)
+
+			if (itemChoice > itemCount + 1)
 			{
 				itemChoice = -1;
 			}
 			else if (10 > itemChoice && itemChoice > 0)
 			{
 				ExamineHandler(playerItems[itemChoice - 1]);
+				system("CLS");
 			}
 			else if (itemChoice == 0)
 			{

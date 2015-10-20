@@ -2,7 +2,7 @@ PEN
 A basic ballpoint pen.  It's a bit worn out, but still sturdy.
 <End>
 
-KEY237
+ROOM237KEY
 A classic hotel room key.  The tag hanging from the key ring
 has the number 237 printed on it.
 <End>

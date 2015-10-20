@@ -36,7 +36,7 @@ Location: Lobby
 You enter the dusty hotel lobby.  Dim light from the windows cast shadows 
 across the empty room.  The doors slam shut behind you and you hear the lock 
 latch.  You try to open the door, but it won't budge.  The hotel's front desk 
-is to the north.  There are doorways to both the East and West.
+is to the North.  There are doorways to both the East and West.
 
 Exits: 1 - North, 3 - East, 4 - West
 <End>
@@ -46,7 +46,7 @@ Location: Lobby
 
 You are in the hotel lobby.  The eyes of the people in the paintings on the 
 walls seem to follow you as you walk across the room. The front desk is to the 
-north.  There are doorways to both the East and West.
+North.  There are doorways to both the East and West.
 
 Exits: 1 - North, 3 - East, 4 - West
 <End>
@@ -69,7 +69,7 @@ Location: Front Desk
 You stand at the hotel's front desk.  Rows of room keys hang from small hooks 
 on the wall behind it.  One of them are missing. The guest book lies open on 
 the desktop.  Your name is signed on the bottom line.  The lobby is to the 
-south and an elevator is to the West.
+South and an elevator is to the West.
 
 Exits: 2 - South, 4 - West
 <End>
@@ -81,7 +81,7 @@ Location: Front Desk
 The sound of the bell echoes through the room.  You hear the strain of creaking
 leather as the old guest book starts to open by itself. A pen rolls across the
 desk, coming to a stop next to the book. You scan the list of names on the page
-which ending with a blank line awaiting a signature. The lobby is to the South
+which ends with a blank line awaiting a signature. The lobby is to the South
 and an elevator is to the West.
 
 Exits: 2 - South, 4 - West
@@ -92,7 +92,7 @@ Location: Front Desk
 
 The guest book lies open on the front desk, with a pen sitting next to it.  A
 blank line at the bottom of the page awaits a new signature.  The lobby is to 
-the south and an elevator is to the West.
+the South and an elevator is to the West.
 
 Exits: 2 - South, 4 - West
 <End>
@@ -111,10 +111,11 @@ SIGNBOOK
 <FirstDesc>
 Location: Front Desk
 
-As you sign your name in the book and set the pen down, you hear the jangling 
-of keys.  You look up to see a room key rise up off its hook and float toward 
-you.  You hold out your hand and it comes to rest in your palm.  The tag
-attached to the key says Room 237ag.  The lobby is to the south and an elevator is to the West.
+As you sign your name in the book, you hear the jangling of keys.  You look 
+up to see a room key rise up off its hook and float toward you.  You hold 
+out your hand and it comes to rest in your palm.  The tag attached to the 
+key says Room 237.  The lobby is to the South and an elevator is to the 
+West.
 
 Exits: 2 - South, 4 - West
 <End>

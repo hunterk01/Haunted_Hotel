@@ -115,7 +115,9 @@ void FrontDoor()
 	if (choice[0] = '0')
 	{
 		PrintRoom(currentState, 1);
+		std::cout << "What would you like to do? ";
 		std::cin >> choice;
+
 		if (choice[0] == '1')
 		{
 			currentState = "LOBBY";
@@ -1063,8 +1065,8 @@ void ElevatorInt()
 				std::cout << "You insert the key into the slot next to the B button and turn."
 					<< "It resists at first, but then gives way and clicks into place.";
 				system("pause");
-				RM_ElevInterior.visited == true;
-				elevKeyUsed == true;
+				RM_ElevInterior.visited = true;
+				elevKeyUsed = true;
 				TimeIncrease(1);
 				system("CLS");
 			}
@@ -1439,7 +1441,7 @@ void Hallway3fEast()
 				SearchHandler("VEND");
 				AddToInventory("COIN");
 				TimeIncrease(1);
-				hasCoin == true;
+				hasCoin = true;
 			}
 			else
 			{
@@ -1604,7 +1606,7 @@ void Basement()
 			}
 			else
 			{
-				choice[0] == '0';
+				choice[0] = '0';
 			}
 		}
 		else if (choice[0] == 's')
@@ -1855,7 +1857,7 @@ void Fountain()
 			currentState = "GARDENPATH";
 			TimeIncrease(1);
 		}
-		else if (choice[0] == '3')
+		else if (choice[0] == '4')
 		{
 			currentState = "SHED";
 			TimeIncrease(1);
@@ -1949,7 +1951,7 @@ void ShedExterior()
 			}
 			else
 			{
-				choice[0] == '0';
+				choice[0] = '0';
 			}
 		}
 		if (choice[0] == '3')
@@ -2291,7 +2293,7 @@ void RitualRoom()
 			}
 			else
 			{
-				choice[0] == '0';
+				choice[0] = '0';
 			}
 		}
 		else if (choice[0] == 's')
@@ -2378,7 +2380,7 @@ void BurialChamber() // Not done yet
 			}
 			else
 			{
-				choice[0] == '0';
+				choice[0] = '0';
 			}
 		}
 		else if (choice[0] == 't')
