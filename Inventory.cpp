@@ -50,7 +50,8 @@ bool HasItemCheck(std::string itemToCheck)
 // that the player chooses.
 std::string UseItem()
 {
-	int choice = 0;
+	char choice[32] = "0";
+	int itemChoice = 0;
 	std::cout << std::endl;
 	
 	if (itemCount == 0)
@@ -63,27 +64,37 @@ std::string UseItem()
 
 		for (int i = 0; i < itemCount; ++i)
 		{
-			std::cout << i + 1 << " - " << playerItems[i] << std::endl << std::endl;
+			std::cout << i + 1 << " - " << playerItems[i] << std::endl;
 		}
-		std::cout << "Your choice: ";
+		std::cout << std::endl << "Your choice: ";
 
-		while (choice == 0)
+		while (choice[0] == '0')
 		{
 			std::cin >> choice;
 
-			if (choice > itemCount)
+			if (isdigit(choice[0]))
 			{
-				std::cout << "Invalid.  Choose again: ";
-				choice = 0;
-			}
-			else if (10 > choice && choice > 0)
-			{
-				return (playerItems[choice - 1]);
+				itemChoice = choice[0] - 48;
+
+				if (itemChoice > itemCount)
+				{
+					std::cout << "Invalid.  Choose again: ";
+					choice[0] = '0';
+				}
+				else if (10 > itemChoice && itemChoice > 0)
+				{
+					return (playerItems[itemChoice - 1]);
+				}
+				else
+				{
+					choice[0] = '0';
+					system("CLS");
+				}
 			}
 			else
 			{
-				choice = 0;
-				system("CLS");
+				std::cout << "Invalid.  Choose again: ";
+				choice[0] = '0';
 			}
 		}
 	}
@@ -94,14 +105,15 @@ std::string UseItem()
 void PrintInventory()
 {
 	bool done = false;
-	int itemChoice;
+	char choice[32];
+	int itemChoice = 0;
 
 	system("CLS");
 	
 	while (!done)
 	{
-		itemChoice = -1;
-		
+		choice[0] = 'x';
+
 		std::cout << "===============" << std::endl
 			<< "   Inventory" << std::endl
 			<< "===============" << std::endl;
@@ -112,34 +124,49 @@ void PrintInventory()
 			system("CLS");
 			return;
 		}
-		while (itemChoice == -1)
+		else
 		{
 			for (int i = 0; i < itemCount; ++i)
 			{
 				std::cout << i + 1 << " - " << playerItems[i] << std::endl;
 			}
 			std::cout << std::endl << "Choose a number to examine and item, or press 0 to exit: ";
-			std::cin >> itemChoice;
+		}
+		while (choice[0] == 'x')
+		{
 
-			if (itemChoice > itemCount + 1)
+			std::cin >> choice;
+
+			if (isdigit(choice[0]))
 			{
-				itemChoice = -1;
-			}
-			else if (10 > itemChoice && itemChoice > 0)
-			{
-				ExamineHandler(playerItems[itemChoice - 1]);
-				system("CLS");
-			}
-			else if (itemChoice == 0)
-			{
-				system("CLS");
-				done = true;
+				itemChoice = choice[0] - 48;
+
+				if (itemChoice > itemCount + 1)
+				{
+					choice[0] = 'x';
+				}
+				else if (itemCount >= itemChoice && itemChoice >= 1)
+				{
+					ExamineHandler(playerItems[itemChoice - 1]);
+					system("CLS");
+				}
+				else if (itemChoice == 0)
+				{
+					system("CLS");
+					done = true;
+				}
+				else
+				{
+					choice[0] = 'x';
+					system("CLS");
+				}
 			}
 			else
 			{
-				itemChoice = -1;
-				system("CLS");
+				std::cout << "Invalid.  Choose again: ";
+				choice[0] = 'x';
 			}
 		}
 	}
 }
+

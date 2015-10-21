@@ -1,7 +1,7 @@
 #include <iostream>
 #include "TimeKeeper.h"
 
-Time doomClock = { 3, 0 };
+Time doomClock = { 9, 26 };
 
 void TimeIncrease(int timeChange)
 {

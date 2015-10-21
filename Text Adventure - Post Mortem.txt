@@ -1,0 +1,57 @@
+Text Adventure Post Mortem
+Kevin Hunter
+
+
+Scope
+-----
+When given the assignment, we had three weeks until it was due.  So, I planned my text adventure around having
+a large portion of that time to complete the work.  However, the string library part of the assestment took up
+two of those weeks.  So, I was faced with three options:
+1. Scrape my game and going with a "Hunt the Wumpus" clone, which I had not interest in
+2. Scale my game back and make a fairly boring text adventure, without many options
+3. Bite the bullet and continue on with my original idea
+I chose option 3 and decided to make the game I had originally intended to make.
+
+That game involved a very large hotel, with lots of rooms/descriptions, an inventory system, and a sizable list
+of commands to navigate, and interact with.
+
+
+Challenges
+----------
+I was originally trying to have the player type out full commands and have the program grab keywords from that
+text.  That proved to be more difficult, and time consuming, than I could pull off and still meet the deadline.
+So, I decided to scale it down to just entering single letter, or number, commands and presenting the player
+with additonal options, when necessary.
+
+This game tells a story that requires lots of description.  Each location usually had two different descriptions
+and some had three.  There were also descriptions for examined items and searched rooms.  Figuring out how to
+handle all that text took a lot of time to work out.
+
+
+What went right
+---------------
+The biggest success was working out how to handle the text.  I wrote a function to search a text file for a 
+keyword to find the room, then a second keyword to figure out which description to output.  It would then 
+write each line of text until it reached an "end" tag.
+
+I also worked out a dynamic inventory system, with functions to add items, remove items, print a list, and allow
+the player to examine the examine and use the items.  It works pretty slick.
+
+I also researched how to change the size of the console window and add music to my game.
+
+
+What went wrong
+---------------
+I spent alot of time trying work out how to have the player input a string of commands and grab specific key
+words from that text.  Then it would handle the actions, based on those commands.  It proved to be more
+difficult than I thought it would be, and I spent too much time on it, only to scrap it for a more simple
+command entry system.
+
+
+Conclusion
+----------
+While I had to do alot of work outside of normal class time, I am happy that I got to create the game that I
+had originally designed.  I think the game turned out pretty good and is far more interesting to play than the
+"Hunt the Wumpus" game.
+
+

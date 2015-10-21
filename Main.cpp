@@ -6,9 +6,6 @@
 
 int main()
 {
-	bool gameOver = false;
-	char state[16] = "FDOOR";
-
 	// Set console to larger size
 	HWND console = GetConsoleWindow();
 	RECT r;
@@ -16,14 +13,8 @@ int main()
 	MoveWindow(console, r.left, r.top, 800, 600, TRUE);
 	
 	// Menu handles title screen, menu, and music
-	Menu(gameOver);
-	
-	
-	
-
-
-	
-	system("pause");
+	// The game loop is called inside the menu
+	Menu();
 	
 	return 0;
 }

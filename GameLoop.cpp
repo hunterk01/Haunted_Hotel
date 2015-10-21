@@ -7,15 +7,17 @@
 #include "TimeKeeper.h"
 
 // Process flow variables
-bool rangBell = false, tookPen = false, elevKeyUsed = false, hasMeat = false, rm237Open = false, hasCoin = false,
-	 hasHandle = false, chainBroken = false, hasGas = false, candleLit = false, brickPressed = false, dogFed = false,
-	 passageOpen = false, bodySearched = false, hasMatches = false, playedRecord = false;
+bool gameOn = true, rangBell = false, tookPen = false, elevKeyUsed = false, hasMeat = false, rm237Open = false, hasCoin = false,
+hasHandle = false, chainBroken = false, hasGas = false, candleLit = false, brickPressed = false, dogFed = false,
+passageOpen = false, bodySearched = false, hasMatches = false, playedRecord = false, shedSearched = false,
+coinClue = false, coinInPool = false;
+
 std::string currentState = "INTRO";
 
 // This section will handle all of the game flow
 void GameProcessor()
 {
-	bool gameOn = true;
+	gameOn = true;
 
 	while (gameOn)
 	{
@@ -56,16 +58,24 @@ void GameProcessor()
 			else if (currentState == "RITUALDIM")	DarkRoom();
 			else if (currentState == "RITUALLIT")	LitRoom();
 			else if (currentState == "RITUAL")		RitualRoom();
+			else if (currentState == "BRICK")		BrickPress();
 			else if (currentState == "BURIAL")		BurialChamber();
 			else if (currentState == "PARKING")		ParkingLot();
 			else if (currentState == "TRUCK")		AbandonnedTruck();
 			else if (currentState == "CAR")			YourCar();
-			else if (currentState == "WIN")			WinCondition();
+			else if (currentState == "WIN")
+			{
+				WinCondition();
+				ResetGame();
+				return;
+			}
 		}
 		else
 		{
 			currentState = "LOSE";
 			LoseCondition();
+			ResetGame();
+			return;
 		}
 	}
 }
@@ -98,6 +108,7 @@ Room RM_BurialChamber = { false };
 Room RM_ParkingLot = { false };
 Room RM_AbandonnedTruck = { false };
 Room RM_YourCar = { false };
+Room RM_LoseCondition = { false };
 
 ////// Intro and first floor rooms /////
 void Intro()
@@ -115,7 +126,7 @@ void FrontDoor()
 	if (choice[0] = '0')
 	{
 		PrintRoom(currentState, 1);
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '1')
@@ -306,7 +317,7 @@ void FrontDesk()
 	}
 }
 
-void Guestbook() // Need to define the useItem() function, then test it here
+void Guestbook()
 {
 	char choice[32] = "0";
 	if (choice[0] = '0')
@@ -369,6 +380,7 @@ void Guestbook() // Need to define the useItem() function, then test it here
 				if (itemToUse == "PEN")
 				{
 					currentState = "SIGNBOOK";
+					AddToInventory("ROOM237KEY");
 					TimeIncrease(1);
 				}
 				else
@@ -413,9 +425,8 @@ void Signbook()
 	if (choice[0] = '0')
 	{
 		PrintRoom(currentState, 1);
-		AddToInventory("ROOM237KEY");
 		RM_FrontDesk.visited = true;
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '2')
@@ -729,6 +740,7 @@ void Ballroom()
 void RecordPlayer()
 {
 	PrintRoom(currentState, 1);
+	RemoveFromInventory("HANDLE");
 	currentState = "BALLROOM";
 	TimeIncrease(5);
 	system("pause");
@@ -967,11 +979,12 @@ void ElevatorBsmtExt()
 	if (choice[0] = '0')
 	{
 		PrintRoom(currentState, 1);
+		std::cout << std::endl << "What would you like to do? " << std::endl;
 		std::cin >> choice;
 
-		if (choice[0] == '2')
+		if (choice[0] == '3')
 		{
-			currentState = "FDESK";
+			currentState = "BASEMENT";
 			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
@@ -1062,8 +1075,8 @@ void ElevatorInt()
 			}
 			else if (itemToUse == "SMALLKEY")
 			{
-				std::cout << "You insert the key into the slot next to the B button and turn."
-					<< "It resists at first, but then gives way and clicks into place.";
+				std::cout << std::endl << "You insert the key into the slot next to the B button and turn."
+					<< std::endl << "It resists at first, but then gives way and clicks into place.\n\n";
 				system("pause");
 				RM_ElevInterior.visited = true;
 				elevKeyUsed = true;
@@ -1105,7 +1118,7 @@ void Hallway2fWest()
 	if (choice[0] = '0')
 	{
 		PrintRoom(currentState, 1);
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '3')
@@ -1185,7 +1198,7 @@ void Hallway2fEast()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 		
 		if (choice[0] == '1')
@@ -1277,7 +1290,7 @@ void Room237()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '2')
@@ -1351,7 +1364,7 @@ void Hallway3fWest()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '1')
@@ -1427,7 +1440,7 @@ void Hallway3fEast()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '4')
@@ -1506,7 +1519,7 @@ void Room305() // Not done yet
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '2')
@@ -1581,7 +1594,7 @@ void Basement()
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		if (chainBroken = false)
+		if (!chainBroken)
 		{
 			PrintRoom(currentState, 1);
 		}
@@ -1589,15 +1602,10 @@ void Basement()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
-		if (choice[0] == '1')
-		{
-			currentState = "ELEVBX";
-			TimeIncrease(1);
-		}
-		else if (choice[0] == '4')
+		if (choice[0] == '3')
 		{
 			if (chainBroken == true)
 			{
@@ -1608,6 +1616,11 @@ void Basement()
 			{
 				choice[0] = '0';
 			}
+		}
+		else if (choice[0] == '4')
+		{
+			currentState = "ELEVBX";
+			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
 		{
@@ -1668,6 +1681,11 @@ void Basement()
 void ChainBreak()
 {
 	PrintRoom(currentState, 1);
+	chainBroken = true;
+	currentState = "BASEMENT";
+	TimeIncrease(3);
+	std::cout << std::endl;
+	system("pause");
 }
 
 ///// Garden locations /////
@@ -1686,7 +1704,7 @@ void GardenEntrance()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '4')
@@ -1754,14 +1772,14 @@ void GardenPath()
 	if (choice[0] = '0')
 	{
 		PrintRoom(currentState, 1);
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '1')
 		{
 			currentState = "FOUNTAIN";
 		}
-		else if (choice[0] == '4')
+		else if (choice[0] == '3')
 		{
 			currentState = "GARDENENT";
 		}
@@ -1821,15 +1839,19 @@ void Fountain()
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		if (!passageOpen)
+		if (!passageOpen && !coinInPool)
 		{
 			PrintRoom(currentState, 1);
 		}
-		else
+		else if (coinInPool)
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		else
+		{
+			PrintRoom(currentState, 3);
+		}
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '1')
@@ -1871,9 +1893,20 @@ void Fountain()
 		}
 		else if (choice[0] == 't')
 		{
-			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
-			system("pause");
-			choice[0] = '0';
+			if (coinInPool)
+			{
+				std::cout << std::endl << "You take the coin out of the fountain pool." << std::endl << std::endl;
+				AddToInventory("COIN");
+				coinInPool = false;
+				system("pause");
+				choice[0] = '0';
+			}
+			else
+			{
+				std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
+				system("pause");
+				choice[0] = '0';
+			}
 		}
 		else if (choice[0] == 'u')
 		{
@@ -1889,7 +1922,6 @@ void Fountain()
 				{
 					currentState = "SECRET";
 					RemoveFromInventory("COIN");
-					TimeIncrease(3);
 				}
 				else
 				{
@@ -1939,7 +1971,7 @@ void ShedExterior()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What do you want to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 		
 		if (choice[0] == '1')
@@ -1954,9 +1986,9 @@ void ShedExterior()
 				choice[0] = '0';
 			}
 		}
-		if (choice[0] == '3')
+		else if (choice[0] == '3')
 		{
-			currentState == "FOUNTAIN";
+			currentState = "FOUNTAIN";
 			TimeIncrease(1);
 		}
 		else if (choice[0] == 's')
@@ -2028,8 +2060,15 @@ void ShedInterior()
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		PrintRoom(currentState, 1);
-		std::cout << "What would you like to do? ";
+		if (!shedSearched)
+		{
+			PrintRoom(currentState, 1);
+		}
+		else
+		{
+			PrintRoom(currentState, 2);
+		}
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 		
 		if (choice[0] == '2')
@@ -2039,10 +2078,19 @@ void ShedInterior()
 		}
 		else if (choice[0] == 's')
 		{
-			SearchHandler("SHED");
-			AddToInventory("CROWBAR");
-			TimeIncrease(4);
-			choice[0] = '0';
+			if (!shedSearched)
+			{
+				SearchHandler("SHED");
+				AddToInventory("CROWBAR");
+				shedSearched = true;
+				TimeIncrease(4);
+				choice[0] = '0';
+			}
+			else
+			{
+				std::cout << "You have already searched this shed." << std::endl;
+				choice[0] = '0';
+			}
 		}
 		else if (choice[0] == 't')
 		{
@@ -2094,81 +2142,30 @@ void FeedTheDog()
 	currentState = "SHED";
 	dogFed = true;
 	TimeIncrease(3);
+	std::cout << std::endl;
+	system("pause");
 }
 
 void SecretPassage()
 {
-	char choice[32] = "0";
-	if (choice[0] = '0')
+	if (!coinClue)
 	{
 		PrintRoom(currentState, 1);
-		std::cout << "What would you like to do? ";
-		std::cin >> choice;
-
-		if (choice[0] == '1')
-		{
-			currentState = "RITUAL";
-			TimeIncrease(1);
-		}
-		else if (choice[0] == '2')
-		{
-			currentState = "GARDENPATH";
-			TimeIncrease(1);
-		}
-		if (choice[0] == '3')
-		{
-			currentState = "SHED";
-			TimeIncrease(1);
-		}
-		else if (choice[0] == 's')
-		{
-			std::cout << std::endl << "Your search the room and find nothing." << std::endl << std::endl;
-			system("pause");
-			choice[0] = '0';
-			TimeIncrease(2);
-		}
-		else if (choice[0] == 't')
-		{
-			std::cout << std::endl << "There's nothing here to take." << std::endl << std::endl;
-			system("pause");
-			choice[0] = '0';
-		}
-		else if (choice[0] == 'u')
-		{
-			std::string itemToUse = UseItem();
-			if (itemToUse == "0")
-			{
-				std::cout << "You don't have any items to use." << std::endl << std::endl;
-				system("Pause");
-			}
-			else
-			{
-				std::cout << std::endl << "You can't use that item here." << std::endl << std::endl;
-				system("pause");
-				choice[0] = '0';
-				TimeIncrease(1);
-			}
-		}
-		else if (choice[0] == 'p')
-		{
-			std::cout << std::endl << "There's nothing here to press." << std::endl << std::endl;
-			system("pause");
-			choice[0] = '0';
-		}
-		else if (choice[0] == 'i')
-		{
-			PrintInventory();
-		}
-		else if (choice[0] == 'd')
-		{
-			ShowDirections();
-		}
+		TimeIncrease(3);
+		coinInPool = true;
+		std::cout << std::endl;
+		system("pause");
 	}
 	else
 	{
-		choice[0] = '0';
-		system("CLS");
+		PrintRoom(currentState, 2);
+		passageOpen = true;
+		TimeIncrease(3);
+		std::cout << std::endl;
+		system("pause");
 	}
+	
+	currentState = "FOUNTAIN";
 }
 
 void DarkRoom()
@@ -2185,7 +2182,7 @@ void DarkRoom()
 		{
 			PrintRoom(currentState, 1);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '2')
@@ -2254,12 +2251,17 @@ void LitRoom()
 	{
 		PrintRoom(currentState, 1);
 		RM_RitualLit.visited = true;
+		std::cout << std::endl;
+		system("pause");
 	}
 	else
 	{
 		PrintRoom(currentState, 2);
 		currentState = "RITUAL";
+		candleLit = true;
 		TimeIncrease(5);
+		std::cout << std::endl;
+		system("pause");
 	}
 }
 
@@ -2268,15 +2270,23 @@ void RitualRoom()
 	char choice[32] = "0";
 	if (choice[0] = '0')
 	{
-		if (!brickPressed)
+		if (candleLit)
 		{
-			PrintRoom(currentState, 1);
+			if (!brickPressed)
+			{
+				PrintRoom(currentState, 1);
+			}
+			else
+			{
+				PrintRoom(currentState, 2);
+			}
 		}
 		else
 		{
-			PrintRoom(currentState, 2);
+			currentState = "RITUALDIM";
+			return;
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '2')
@@ -2327,9 +2337,8 @@ void RitualRoom()
 		}
 		else if (choice[0] == 'p')
 		{
-			currentState = "PRESSBUTTON";
+			currentState = "BRICK";
 			TimeIncrease(2);
-			currentState = "RITUAL";
 		}
 		else if (choice[0] == 'i')
 		{
@@ -2347,6 +2356,16 @@ void RitualRoom()
 	}
 }
 
+void BrickPress()
+{
+	PrintRoom(currentState, 1);
+	TimeIncrease(2);
+	currentState = "RITUAL";
+	brickPressed = true;
+	std::cout << std::endl;
+	system("pause");
+}
+
 void BurialChamber() // Not done yet
 {
 	char choice[32] = "0";
@@ -2361,7 +2380,7 @@ void BurialChamber() // Not done yet
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 		
 		if (choice[0] == '4')
@@ -2443,17 +2462,17 @@ void ParkingLot()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '1')
 		{
-			currentState = "GARDENPATH";
+			currentState = "TRUCK";
 			TimeIncrease(1);
 		}
 		else if (choice[0] == '2')
 		{
-			currentState = "TRUCK";
+			currentState = "CAR";
 			TimeIncrease(1);
 		}
 		else if (choice[0] == '3')
@@ -2526,7 +2545,7 @@ void AbandonnedTruck()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '2')
@@ -2607,7 +2626,7 @@ void YourCar()
 		{
 			PrintRoom(currentState, 2);
 		}
-		std::cout << "What would you like to do? ";
+		std::cout << std::endl << "What would you like to do? ";
 		std::cin >> choice;
 
 		if (choice[0] == '1')
@@ -2673,13 +2692,28 @@ void YourCar()
 void WinCondition() // Not done yet
 {
 	PrintRoom(currentState, 1);
-	// Need to add replay programming
+	std::cout << std::endl;
+	system("pause");
+	
+	gameOn = false;
 }
 
 void LoseCondition() // Not done yet
 {
-	PrintRoom(currentState, 1);
-	// Need to add replay programming
+	if (RM_LoseCondition.visited == false)
+	{
+		PrintRoom(currentState, 1);
+		RM_LoseCondition.visited = true;
+	}
+	else
+	{
+		PrintRoom(currentState, 2);
+	}
+	
+	std::cout << std::endl;
+	system("pause");
+
+	gameOn = false;
 }
 
 // Get room descriptions from txt file and output them to console
@@ -2741,19 +2775,21 @@ void PrintRoom(std::string inState, int inDescNum)
 				}
 				else if (inDescNum == 3)
 				{
-					std::getline(file_, line_);
-					if (line_ == "<ThirdDesc>")
+					while (std::getline(file_, line_))
 					{
-						while (std::getline(file_, line_))
+						if (line_ == "<ThirdDesc>")
 						{
-							if (line_ != "<End>")
+							while (std::getline(file_, line_))
 							{
-								std::cout << line_ << "\n";
-							}
-							else
-							{
-								file_.close();
-								return;
+								if (line_ != "<End>")
+								{
+									std::cout << line_ << "\n";
+								}
+								else
+								{
+									file_.close();
+									return;
+								}
 							}
 						}
 					}
@@ -2807,6 +2843,8 @@ void ExamineHandler(std::string inItem)
 	system("CLS");
 	std::string line_;
 	std::ifstream file_("ExamineDescriptions.txt");
+
+	if (inItem == "COIN")	coinClue = true;
 
 	PrintTime();
 	std::cout << std::endl << std::endl;
@@ -2866,8 +2904,9 @@ void ElevatorControls()
 		{
 			if (elevKeyUsed == false)
 			{
-				std::cout << "That button won't work without a key." << std::endl;
-				buttonChoice[0] = '0';
+				std::cout << "That button won't work without a key." << std::endl << std::endl;
+				system("pause");
+				return;
 			}
 			else
 			{
@@ -2892,4 +2931,45 @@ void ShowDirections()
 		<< "Actions: \nS - Search \nT - Take \nU - Use \nP - Press \nI - Inventory \nD - Directions" << std::endl << std::endl;
 
 	system("pause");
+}
+
+void ResetGame()
+{
+	// Reset game flow variables
+	rangBell = false, tookPen = false, elevKeyUsed = false, hasMeat = false, rm237Open = false, hasCoin = false,
+	hasHandle = false, chainBroken = false, hasGas = false, candleLit = false, brickPressed = false, dogFed = false,
+	passageOpen = false, bodySearched = false, hasMatches = false, playedRecord = false, shedSearched = false, 
+	coinClue = false, coinInPool = false;
+	
+	currentState = "INTRO";
+
+	// Reset Room Classes
+	RM_Lobby.visited = false;
+	RM_FrontDesk.visited = false;
+	RM_Guestbook.visited = false;
+	RM_Elev1fExt.visited = false;
+	RM_ElevStart.visited = false;
+	RM_ElevInterior.visited = false;
+	RM_DiningRoom.visited = false;
+	RM_Kitchen.visited = false;
+	RM_Ballroom.visited = false;
+	RM_RecordPlayer.visited = false;
+	RM_Hallway2fEast.visited = false;
+	RM_Room237.visited = false;
+	RM_Hallway3fWest.visited = false;
+	RM_Hallway3fEast.visited = false;
+	RM_Room305.visited = false;
+	RM_GardenEntrance.visited = false;
+	RM_GardenPath.visited = false;
+	RM_Fountain.visited = false;
+	RM_ShedExterior.visited = false;
+	RM_FeedDog.visited = false;
+	RM_SecretPassage.visited = false;
+	RM_RitualDim.visited = false;
+	RM_RitualLit.visited = false;
+	RM_BurialChamber.visited = false;
+	RM_ParkingLot.visited = false;
+	RM_AbandonnedTruck.visited = false;
+	RM_YourCar.visited = false;
+	RM_LoseCondition.visited = false;
 }

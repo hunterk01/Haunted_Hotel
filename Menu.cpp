@@ -35,18 +35,20 @@ void TitleScreen()
 	std::cout << "  ";
 }
 
-void Menu(bool &gameOver)
+void Menu()
 {
-	char menuChoice[32] = "0";
-	bool exitMenu = false;
-
-	PlaySound(TEXT("HouseOnTheHill.wav"), NULL, SND_LOOP | SND_ASYNC);
-	TitleScreen();
-	system("pause");
+	char menuChoice[32];
+	bool exitMenu = false, gameOver = false, showTitle = true;
 
 	while (!exitMenu)
 	{
-		if (!(gameOver))
+		PlaySound(TEXT("HouseOnTheHill.wav"), NULL, SND_LOOP | SND_ASYNC);
+		TitleScreen();
+		system("pause");
+		gameOver = false;
+		menuChoice[0] = '0';
+
+		while (!gameOver)
 		{
 			system("CLS");
 
@@ -72,6 +74,7 @@ void Menu(bool &gameOver)
 						std::cout << line_ << "\n";
 					}
 					file_.close();
+					std::cout << "\n  ";
 					system("pause");
 				}
 				menuChoice[0] = '0';
@@ -84,12 +87,14 @@ void Menu(bool &gameOver)
 				PlaySound(TEXT("HarbingerOfDoom.wav"), NULL, SND_LOOP | SND_ASYNC);
 				GameProcessor();
 				PlaySound(NULL, 0, SND_ASYNC);
+				gameOver = true;
 			}
 			else if (menuChoice[0] == '3')
 			{
 				exitMenu = true;
+				gameOver = true;
 				system("CLS");
-				std::cout << "Thank you for playing!" << std::endl << std::endl;
+				std::cout << std::endl << "  Thank you for playing!" << std::endl << std::endl << "  ";
 				system("pause");
 			}
 			else if (menuChoice[0] == '4')

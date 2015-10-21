@@ -2,20 +2,24 @@ INTRO
 <FirstDesc>
 Introduction
 
-You're driving over a mountain pass, on your way to visit family.  Trees fly by
-on either side as you speed down the road. The smell of pine blows in through
-your open window.  'What a beautiful spring day for a drive', you think to 
-yourself. Suddenly, a dark shadow passes over the car, as if a storm was 
-rolling in. You look out the window, but there isn't a cloud in the sky. A 
-feeling on unease overcomes you at the strangeness of the occurrence. You drive
-on into the growing gloom.
+It's late at night and you're driving over a mountain pass, on your way to 
+visit family.  Trees fly by on either side as you speed down the road.  The 
+brilliant glow of the full moon helps light the road ahead of you. The smell
+of pine blows in through your open window.  "What a beautiful spring night 
+for a drive", you think to yourself. 
+
+Suddenly, a dark shadow passes over the car, as if a storm was rolling in. You 
+look out the window, but can no longer see the moon or stars. A feeling of 
+unease overcomes you at the strangeness of the occurrence. You drive on into 
+the growing gloom.
 
 After traveling another mile down the road, your car engine starts to sputter.
 You look at the gas gauge and see the needle pointing at empty.  You find that
 alarming, since you just filled up before heading up the pass.  It shouldn't be
-anywhere near empty.  As you round a turn, you see a hotel up ahead. Your 
-engine sputters to a halt as your car rolls up to the front of the hotel. You 
-decide to go inside and try to get some help.
+anywhere near empty.  As you round a turn, you see a hotel up ahead.  It looks
+pretty run down, but there are lights on inside. Your engine sputters to a halt
+as your car rolls up to the front of the hotel. You decide to go inside and try
+to get some help.
 <End>
 
 FDOOR
@@ -33,10 +37,10 @@ LOBBY
 <FirstDesc>
 Location: Lobby
 
-You enter the dusty hotel lobby.  Dim light from the windows cast shadows 
-across the empty room.  The doors slam shut behind you and you hear the lock 
-latch.  You try to open the door, but it won't budge.  The hotel's front desk 
-is to the North.  There are doorways to both the East and West.
+You enter the dusty hotel lobby.  Dim light from the wall mounted lights cast 
+shadows across the empty room.  The doors slam shut behind you and you hear the
+lock latch.  You try to open the door, but it won't budge.  The hotel's front 
+desk is to the North.  There are doorways to both the East and West.
 
 Exits: 1 - North, 3 - East, 4 - West
 <End>
@@ -151,7 +155,8 @@ elevator door opens and you step inside.
 <End>
 
 <SecondDesc>
-Location: Elevator 1F
+Location: Elevator Exterior
+
 With a ding, the elevator door opens and you step inside.
 <End>
 
@@ -177,11 +182,11 @@ Exits: 3 - East, 4 - West
 <End>
 
 ELEVBX
-<State:FirstDesc>
+<FirstDesc>
 Location: Elevator Basement Exterior
 
 You are in the basement hallway.  The elevator stands before you with a button
-on the wall next to it.  A dimly lit corridor runs to the South.
+on the wall next to it.  A dimly lit corridor runs to the East.
 
 Exits: 3 - East
 <End>
@@ -426,14 +431,14 @@ BOOKS
 <FirstDesc>
 Location: Room 305
 
-As you pick up the crank handle, the balance of the books shift and the fall
+As you pick up the crank handle, the balance of the books shift and they fall
 onto the floor.  One of the books flips open showing a picture of a pedastal
 surrounded by strange markings on the floor.  You pick up the book and see
 that this image is about a ritual performed to acheive life after death.
 
 Before you can read any further, the book is ripped from your hands.  Startled,
-you look around, but no one is there.  The book floats in the air before a
-moment longer, then slams back down on the nighstand.
+you look around, but no one is there.  The book floats in the air a moment 
+longer, then slams back down on the nighstand.
 
 'Leave my things alone!' a disembodied voice shouts.  
 
@@ -449,26 +454,26 @@ Location: Basement
 
 Light from the small, dirty windows barely illuminates the basement.  The
 furnace, long gone cold, fills half of the room.  There's a door on the East
-wall, but it is chained shut.  A hallway runs to the North.
+wall, but it is chained shut.  A hallway runs to the West.
 
-Exits: 1 - North
+Exits: 4 - West
 <End>
 
 <SecondDesc>
 Location: Basement
 
-You are in the hotel basement.  A hallway runs to the North and door to the
+You are in the hotel basement.  A hallway runs to the West and door to the
 East leads out to the parking lot.
 
-Exits: 1 - North, 3 - East
+Exits: 3 - East, 4 - West
 <End>
 
-<CHAIN>
+CHAIN
 <FirstDesc>
 Location: Basement
 
 You slide the crowbar through the chain and pull with all of your might.  After
-several tries, the chain snaps and falls from the door.  Sunlight spills into
+several tries, the chain snaps and falls from the door.  Moonlight spills into
 the darkness as the door swings open.
 <End>
 
@@ -504,9 +509,9 @@ FOUNTAIN
 <FirstDesc>
 Location: Fountain
 
-You stand before an large fountain.  The water is dark and murky.  An ornate
-fish sculpture sits atop the fountain, its mouth gaping open.  Could this be
-the fish that the voice spoke of?  The path leads to the West and South.
+You stand before a large fountain.  The water is dark and murky.  An ornate
+fish sculpture sits atop the fountain, its mouth gaping open.  The path 
+leads to the West and South.
 
 Exits: 2 - South, 4 - West
 <End>
@@ -514,10 +519,20 @@ Exits: 2 - South, 4 - West
 <SecondDesc>
 Location: Fountain
 
+You stand before a large fountain.  An ornate fish sculpture sits atop the
+fountain, its mouth gaping open.  The old coin you found sits at the bottom 
+of the pools murky depths.  The path leads to the West and South.
+
+Exits: 2 - South, 4 - West
+<End>
+
+<ThirdDesc>
+Location: Fountain
+
 The fountain is drained of water and stairs lead down into a secret chamber.   
 The path leads to the West and South.
 
-Exits: 2 - South, 4 - West
+Exits: 1 - North, 2 - South, 4 - West
 <End>
 
 SHED
@@ -549,35 +564,53 @@ broken, tools and gardening equipment lie in piles all around you.
 Exits: 2 - South
 <End>
 
+<SecondDesc>
+Location: Shed Interior
+
+You are inside the maintenance shed.  The old tools and gardening equipment
+are even more strewn about from your search.
+
+Exits: 2 - South
+<End>
+
 FEEDDOG
 <FirstDesc>
 Location: Maintenance Shed
 
 As you take the meat from its plastic container, the dog eyes it with hunger.
 You toss the meat deep into the garden and the dog runs after it.
-<END>
+<End>
 
 SECRET
 <FirstDesc>
 Location: Fountain
 
-The coin lands in the fish’s mouth and rattles around, down into its belly.
-You hear something click into place.  Moments later, the water starts to drain
-from the fountain, until nothing remains but a slimy film covering the fountain
-bottom.  You hear a grinding sound of stone on stone as the fountain bottom
-starts to move.  The stone bottom parts to reveal a narrow stairway leading
-North, down into the darkness.  The garden path leads East and South.
+You toss the coin into the murky water and wait, but nothing happens.  The
+coin just sits on the bottom of the fountain pool.  Perhaps you are missing
+some information about what to do here.
+<End>
 
-Exits: 1 - North, 2 - South, 3 - East
+<SecondDesc>
+Location: Fountain
+
+As you look at the foutain, with it's fish sculpture, the images you saw on 
+the coin become clear to you.  You throw the coin into the mouth of the fish
+sculpture and it rattles around, down into its belly.  You hear something 
+click into  place.  Moments later, the water starts to drain from the fountain,
+until nothing remains but a slimy film covering the fountain bottom.  You hear
+a grinding sound as the fountain bottom starts to move.  The stone bottom parts
+to reveal a narrow stairway leading North, down into the darkness.  The garden
+path leads East and South.
 <End>
 
 RITUALDIM
 <FirstDesc>
 Location: Dim Room
 
-The room is barely lit from the light making it down the stairs.  You can just
-make out the form of a pedestal in the center of the room, with a single candle
-sitting on top.  The stairs up lead to the South, back out into the garden.
+The room is barely lit by the small amout of light of the garden lamps making
+it down the stairs.  You can just make out the form of a pedestal in the center
+of the room, with a single candle sitting on top.  The stairs up lead to the 
+South, back out into the garden.
 
 Exit: 2 - South
 <End>
@@ -591,7 +624,7 @@ by a large pentagram, drawn in chalk on the floor.  A small bowl sits on the
 pedestal below the candle, it appears to be covered in dried blood. You look
 up and see the ghost of a young woman standing before you.
 
-"You made it" she says with a smile. "I was worried that you wouldn't find me.""
+"You made it" she says with a smile. "I was worried that you wouldn't find me."
 <End>
 
 <SecondDesc>
@@ -612,11 +645,11 @@ sleep, he is able to enter their souls and make them his.  He peforms a ritual
 in this room that allows him to rip their souls from their bodies.  Many people
 have died this way, but you might be the first to escape this fate.  A chamber
 lies beyond this room, where you will find what you need to leave this place. 
-The ghost points to a specific brick in the wall.
 
-Press this and it will open the way.  Find what he holds and use it to escape.
-Tell others of this place, so that it can be cleansed of his evil.  Maybe then
-I can be free of this madness.  Hurry, you do not have much time."
+The ghost points to a specific brick in the wall.  Press this and it will open
+the way.  Find what he holds and use it to escape.  Tell others of this place,
+so that it can be cleansed of his evil.  Maybe then I can be free of this 
+madness.  Hurry, you do not have much time."
 
 The ghost fades away and leaves you alone in the room.
 <End>
@@ -642,7 +675,7 @@ Stairs lead South, back up into the garden.
 Exits: 2 - South, 3 - East
 <End>
 
-PRESSBUTTON
+BRICK
 <FirstDesc>
 Location: Ritual Room
 
